@@ -11,6 +11,13 @@ class User < ActiveRecord::Base
 
   attr_accessible :email, :password, :password_confirmation, :remember_me, :first_name, :last_name
 
+  searchable do
+    text :term do
+      "#{email} #{first_name} #{last_name}"
+    end
+  end
+
+
   def apply_omniauth(omniauth)
     authentications.build(:provider => omniauth['provider'], :uid => omniauth['uid'])
   end

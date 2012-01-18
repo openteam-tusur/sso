@@ -18,6 +18,10 @@ end
 
 gem 'default_value_for'
 gem 'devise'
+gem 'has_searcher'
+gem 'formtastic', :require => false
 gem 'jquery-rails'
 gem 'omniauth'
-gem 'rails'
+gem 'rails', :require => false
+gem 'sunspot_rails'
+gem 'sunspot_solr'
