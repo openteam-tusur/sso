@@ -17,7 +17,6 @@ class User < ActiveRecord::Base
     end
   end
 
-
   def apply_omniauth(omniauth)
     authentications.build(:provider => omniauth['provider'], :uid => omniauth['uid'])
   end

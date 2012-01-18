@@ -18,8 +18,9 @@ end
 
 gem 'default_value_for'
 gem 'devise'
-gem 'has_searcher'
 gem 'formtastic', :require => false
+gem 'has_searcher'
+gem 'inherited_resources'
 gem 'jquery-rails'
 gem 'omniauth'
 gem 'rails', :require => false
