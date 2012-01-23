@@ -21,7 +21,6 @@ end
 
 group :development do
   gem 'sunspot_solr'
-  gem 'itslog'
 end
 
 group :production do
