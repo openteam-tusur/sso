@@ -1,0 +1,13 @@
+ru:
+  formtastic:
+    :yes: 'Да'
+    :no: 'Нет'
+    :required: 'обязательное поле'
+    labels:
+      user:
+        email: Email
+        password: Пароль
+        remember_me: Запомнить меня
+    actions:
+      user:
+        create: Войти
