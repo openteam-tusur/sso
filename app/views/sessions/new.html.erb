@@ -7,7 +7,7 @@
     <%= form.input :remember_me, :as => :boolean if devise_mapping.rememberable? %>
   <% end %>
   <%= form.buttons do %>
-    <%= form.commit_button :button_html => { :class => 'button' } %>
+    <%= form.commit_button :label => 'Войти', :button_html => { :class => 'button' } %>
     <%= render :partial => "shared/links" %>
   <% end %>
 <% end %>

@@ -9,24 +9,24 @@
 
 =hover_and_active_behaviour($inverted: false)
   &:hover, &:focus, &:active, &.active
-    border-color: #3072b3
-    border-bottom-color: #2a65a0
+    border-color: #59dc6b
+    border-bottom-color: #2aa03b
     text-decoration: none
-    text-shadow: -1px -1px 0 rgba(0, 0, 0, 0.3)
+    +single-text-shadow(rgba(0, 0, 0, 0.3), -1px, -1px, 0)
     color: #fff
-    background-color: #3C8DDE
+    background-color: #45c857
     @if $inverted
-      +background-image(linear-gradient(#3072b3, #599bdc))
+      +background-image(linear-gradient(#30b342, #59dc6b))
     @else
-      +background-image(linear-gradient(#599bdc, #3072b3))
+      +background-image(linear-gradient(#59dc6b, #30b342))
   &:active, &.active
-    border-color: #2a65a0
+    border-color: #2aa03b
     border-bottom-color: #3884CF
-    background-color: #3072b3
+    background-color: #45c857
     @if $inverted
-      +background-image(linear-gradient(#599bdc, #3072b3))
+      +background-image(linear-gradient(#59dc6b, #30b342))
     @else
-      +background-image(linear-gradient(#3072b3, #599bdc))
+      +background-image(linear-gradient(#30b342, #59dc6b))
   &::-moz-focus-inner
     padding: 0
     border: 0
@@ -46,7 +46,7 @@ input.button
   border: 1px solid #d4d4d4
   margin: 0
   text-decoration: none
-  text-shadow: 1px 1px 0 #fff
+  +single-text-shadow(#fff, 1px, 1px, 0)
   font: 11px / normal sans-serif
   color: #333
   white-space: nowrap
@@ -201,7 +201,7 @@ input.button
     +border-bottom-left-radius(none)
   &.minor-group .button
     border: 1px solid #d4d4d4
-    text-shadow: none
+    +single-text-shadow(none)
     background-image: none
     background-color: #fff
     &:hover, &:focus

@@ -5,8 +5,11 @@ ru:
     :required: 'обязательное поле'
     labels:
       user:
+        first_name: Имя
+        last_name: Фамилия
         email: Email
         password: Пароль
+        password_confirmation: Ещё раз пароль
         remember_me: Запомнить меня
     actions:
       user:
