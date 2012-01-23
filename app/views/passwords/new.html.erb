@@ -1,0 +1,12 @@
+<h1>Забыли пароль?</h1>
+
+<%= semantic_form_for resource, :as => resource_name, :url => password_path(resource_name), :html => { :method => :post } do |form| %>
+  <%= devise_error_messages! %>
+  <%= form.inputs do %>
+    <%= form.input :email, :input_html => { :autofocus => true } %>
+  <% end %>
+  <%= form.buttons do %>
+    <%= form.commit_button :label => 'Сбросить пароль', :button_html => { :class => 'button icon key' } %>
+    <%= render :partial => "shared/links" %>
+  <% end %>
+<% end %>

@@ -1,16 +1,19 @@
 ru:
+  activerecord:
+    models:
+      user: 'Пользователь'
+    attributes:
+      user:
+        first_name: 'Имя'
+        last_name: 'Фамилия'
+        email: 'Email'
+        password: 'Пароль'
+        password_confirmation: 'Подтвердите пароль'
+        remember_me: 'Запомнить меня'
   formtastic:
     :yes: 'Да'
     :no: 'Нет'
     :required: 'обязательное поле'
-    labels:
-      user:
-        first_name: Имя
-        last_name: Фамилия
-        email: Email
-        password: Пароль
-        password_confirmation: Ещё раз пароль
-        remember_me: Запомнить меня
     actions:
       user:
-        create: Войти
+        create: 'Войти'

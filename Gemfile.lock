@@ -43,6 +43,7 @@ GEM
       bcrypt-ruby (~> 3.0)
       orm_adapter (~> 0.0.3)
       warden (~> 1.1)
+    devise-russian (1.5.0)
     erubis (2.7.0)
     escape (0.0.4)
     execjs (1.2.9)
@@ -111,6 +112,8 @@ GEM
     responders (0.6.4)
     rsolr (1.0.6)
       builder (>= 2.1.2)
+    russian (0.6.0)
+      i18n (>= 0.5.0)
     sass (3.1.11)
     sass-rails (3.1.5)
       actionpack (~> 3.1.0)
@@ -158,6 +161,7 @@ DEPENDENCIES
   compass (~> 0.12.alpha.0)
   default_value_for
   devise
+  devise-russian
   formtastic
   has_searcher
   inherited_resources
@@ -166,6 +170,7 @@ DEPENDENCIES
   omniauth
   pg
   rails
+  russian
   sass-rails
   sqlite3
   sunspot_rails

@@ -3,12 +3,14 @@ source :rubygems
 gem 'compass', '~> 0.12.alpha.0'
 gem 'default_value_for'
 gem 'devise'
+gem 'devise-russian'
 gem 'formtastic', :require => false
 gem 'has_searcher'
 gem 'inherited_resources'
 gem 'jquery-rails'
 gem 'omniauth'
 gem 'rails', :require => false
+gem 'russian'
 gem 'sunspot_rails'
 gem 'sass-rails'
 

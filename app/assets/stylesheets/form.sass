@@ -23,6 +23,11 @@
         text-indent: -9999em
         background: transparent url('required.png') no-repeat
         margin-left: 3px
+      .inline-errors
+        color: #880000
+        font-size: 11px
+        padding-left: 15px
+        background: transparent url('inline_error_arrow.png') no-repeat left 1px
     .string,
     .email,
     .password
@@ -40,3 +45,11 @@
     li
       float: left
       margin-right: 10px
+  #error_explanation
+    +inline-block
+    width: 370px
+    color: #fff
+    background-color: #880000
+    +border-radius
+    padding: 10px
+    margin-bottom: 10px
