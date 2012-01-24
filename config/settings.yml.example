@@ -6,6 +6,7 @@ production:
     app_host:       your.production.domain.com
     smtp_address:   smtp.domain.com
     smtp_port:      25
+    sender_email:   no-reply@domain.com
 
 development:
   hoptoad:
@@ -15,3 +16,4 @@ development:
     app_host:       localhost:3000
     smtp_address:   localhost
     smtp_port:      25
+    sender_email:   no-reply@localhost
