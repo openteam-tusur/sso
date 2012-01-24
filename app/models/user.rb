@@ -9,7 +9,7 @@ class User < ActiveRecord::Base
 
   self.token_authentication_key = "oauth_token"
 
-  attr_accessible :email, :password, :password_confirmation, :remember_me, :first_name, :last_name
+  attr_accessible :email, :password, :password_confirmation, :remember_me, :first_name, :last_name, :id
 
   searchable do
     text :term do
@@ -33,4 +33,5 @@ class User < ActiveRecord::Base
     self.status = "Active"
     self.expiration_date = 1.year.from_now
   end
+
 end

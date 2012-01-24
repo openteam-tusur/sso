@@ -7,10 +7,6 @@ class UsersController < ApplicationController
 
   respond_to :json
 
-  def index
-    index!{ render :json => @users.to_json(:only => [:id, :email, :first_name, :last_name] ) and return}
-  end
-
   protected
     def collection
       get_collection_ivar || set_collection_ivar(search_collection)
