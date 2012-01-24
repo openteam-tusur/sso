@@ -17,6 +17,10 @@ class User < ActiveRecord::Base
     end
   end
 
+  def to_s
+    self.last_name.blank? && self.first_name.blank? ? self.email : "#{self.last_name} #{self.first_name}"
+  end
+
   def apply_omniauth(omniauth)
     authentications.build(:provider => omniauth['provider'], :uid => omniauth['uid'])
   end

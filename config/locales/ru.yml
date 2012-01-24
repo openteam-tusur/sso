@@ -9,6 +9,7 @@ ru:
         email: 'Email'
         password: 'Пароль'
         password_confirmation: 'Подтвердите пароль'
+        current_password: 'Текущий пароль'
         remember_me: 'Запомнить меня'
   formtastic:
     :yes: 'Да'
