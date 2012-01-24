@@ -1,6 +1,23 @@
 @import 'compass/utilities'
 @import 'compass/css3'
 
+=flash_block($background_color)
+  color: #fff
+  +border-radius(3px)
+  background-color: $background_color
+  padding: 10px
+  margin-bottom: 10px
+  a
+    float: right
+    width: 12px
+    height: 12px
+    display: block
+    text-indent: -9999em
+    overflow: hidden
+    background: transparent url('cross.png') no-repeat
+    margin-left: 10px
+  p
+    font-weight: bold
 .content
   width: 500px
   +min-height(128px)
@@ -12,3 +29,7 @@
   .sign_out
     font-size: 16px
     margin-top: 5px
+  .flash_notice
+    +flash_block(#59b05c)
+  .flash_error
+    +flash_block(#d56a6a)

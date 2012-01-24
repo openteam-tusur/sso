@@ -11,6 +11,14 @@ ru:
         password_confirmation: 'Подтверждение пароля'
         current_password: 'Текущий пароль'
         remember_me: 'Запомнить меня'
+  errors:
+    messages:
+      not_found: "не найден"
+      not_saved:
+        one: "Сохранение не удалось из-за %{count} ошибки"
+        few: "Сохранение не удалось из-за %{count} ошибок"
+        many: "Сохранение не удалось из-за %{count} ошибок"
+        other: "Сохранение не удалось из-за %{count} ошибки"
   formtastic:
     :yes: 'Да'
     :no: 'Нет'

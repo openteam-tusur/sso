@@ -7,3 +7,11 @@
 //= require jquery
 //= require jquery_ujs
 //= require_tree .
+
+$(function() {
+  $('#flash_block a').click(function() {
+    $('#flash_block').slideUp(function() {
+      $(this).remove();
+    });
+  });
+});
