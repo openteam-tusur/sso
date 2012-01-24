@@ -8,10 +8,16 @@
 //= require jquery_ujs
 //= require_tree .
 
+function hide_flash_block() {
+  $('#flash_block').slideUp(function() {
+    $(this).remove();
+  });
+};
+
 $(function() {
   $('#flash_block a').click(function() {
-    $('#flash_block').slideUp(function() {
-      $(this).remove();
-    });
+    hide_flash_block();
   });
+  $("#flash_block").stop(true, true);
+  setTimeout("hide_flash_block();", 15000);
 });
