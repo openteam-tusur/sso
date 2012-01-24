@@ -18,7 +18,7 @@ class User < ActiveRecord::Base
   end
 
   def to_s
-    self.last_name.blank? && self.first_name.blank? ? self.email : "#{self.last_name} #{self.first_name}"
+    self.first_name.blank? && self.last_name.blank? ? self.email : "#{self.first_name} #{self.last_name}"
   end
 
   def apply_omniauth(omniauth)

@@ -1,4 +1,4 @@
-<p>Добрый день, <%= current_user %></p>
+<h1>Добрый день, <%= current_user %></h1>
 <p><%= link_to 'Изменить профиль', edit_user_registration_path %></p>
-<p><%= link_to 'Изменить пароль', edit_user_password_path %></p>
-<p><%= link_to 'Выход', destroy_user_session_path %></p>
+<p><%= link_to 'Удалить учётную запись', registration_path(current_user), :confirm => 'Вы точно уверены, что хотите удалить учётную запись?', :method => :delete %></p>
+<p class='sign_out'><%= link_to 'Выход', destroy_user_session_path %></p>

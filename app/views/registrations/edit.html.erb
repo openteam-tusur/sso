@@ -6,14 +6,18 @@
     <%= form.input :first_name, :input_html => { :autofocus => true } %>
     <%= form.input :last_name %>
     <%= form.input :email, :input_html => { :disabled => :disabled } %>
+    <%= form.input :password %></p>
+    <%= form.input :password_confirmation %></p>
+  <%= form.input :current_password, :required => true %></p>
   <% end %>
   <%= form.buttons do %>
     <%= form.commit_button :label => 'Сохранить', :button_html => { :class => 'button' } %>
+    <li><%= link_to 'Отмена', root_path %></li>
+    <li class='float_right'>
+      <%= link_to 'Удалить учётную запись', registration_path(resource_name),
+                  :confirm => 'Вы точно уверены, что хотите удалить учётную запись?',
+                  :method => :delete,
+                  :class => 'button danger' %>
+    </li>
   <% end %>
 <% end %>
-
-<h3>Cancel my account</h3>
-
-<p>Unhappy? <%= link_to "Cancel my account", registration_path(resource_name), :confirm => "Are you sure?", :method => :delete %>.</p>
-
-<%= link_to "Back", :back %>

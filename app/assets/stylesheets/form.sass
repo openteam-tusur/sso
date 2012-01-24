@@ -23,7 +23,10 @@
         text-indent: -9999em
         background: transparent url('required.png') no-repeat
         margin-left: 3px
-      .inline-errors
+      .inline_hints
+        font-size: 11px
+        color: #555
+      .inline_errors
         color: #880000
         font-size: 11px
         padding-left: 15px
@@ -44,7 +47,10 @@
     margin-top: 10px
     li
       float: left
-      margin-right: 10px
+      margin: 0 10px 0 0
+      &.float_right
+        float: right
+        margin: 0 0 0 10px
   #error_explanation
     +inline-block
     width: 370px
