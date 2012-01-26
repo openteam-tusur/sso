@@ -3,7 +3,7 @@ Sso::Application.routes.draw do
                                        :sessions => 'sessions',
                                        :passwords => 'passwords' }
 
-  match '/users.json', :to => 'users#index', :format => :json
+  get '/users.json', :to => 'users#index'
 
   # omniauth client stuff
   match '/auth/:provider/callback', :to => 'authentications#create'
