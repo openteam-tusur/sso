@@ -13,3 +13,15 @@ class Client < ActiveRecord::Base
     Base64.urlsafe_encode64(SecureRandom.random_bytes(length/4*3))
   end
 end
+# == Schema Information
+#
+# Table name: clients
+#
+#  id         :integer         not null, primary key
+#  name       :string(255)
+#  app_id     :string(255)
+#  app_secret :string(255)
+#  created_at :datetime
+#  updated_at :datetime
+#
+

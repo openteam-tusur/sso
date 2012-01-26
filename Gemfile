@@ -21,6 +21,7 @@ group :assets do
 end
 
 group :development do
+  gem 'annotate', '~> 2.4.1.beta1'
   gem 'sunspot_solr'
 end
 
