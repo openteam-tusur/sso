@@ -10,9 +10,9 @@
     <%= form.input :current_password, :required => true, :input_html => { :autofocus => true, :value => nil, :autocomplete => 'off' } %>
   <% end %>
   <%= form.inputs :class => 'inputs inline_fieldset' do %>
-    <%= form.input :last_name %>
     <%= form.input :first_name %>
     <%= form.input :middle_name %>
+    <%= form.input :last_name %>
   <% end %>
   <%= form.inputs do %>
     <%= form.input :email, :input_html => { :disabled => :disabled } %>

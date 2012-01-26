@@ -4,9 +4,9 @@
   <%= devise_error_messages! %>
 
   <%= form.inputs :class => 'inputs inline_fieldset' do %>
-    <%= form.input :last_name, :input_html => { :autofocus => true } %>
-    <%= form.input :first_name %>
+    <%= form.input :first_name, :input_html => { :autofocus => true } %>
     <%= form.input :middle_name %>
+    <%= form.input :last_name %>
   <% end %>
   <%= form.inputs do %>
     <%= form.input :email %>
