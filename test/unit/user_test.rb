@@ -28,5 +28,6 @@ end
 #  expiration_date      :date
 #  created_at           :datetime
 #  updated_at           :datetime
+#  middle_name          :string(255)
 #
 

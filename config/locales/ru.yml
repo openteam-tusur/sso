@@ -4,8 +4,9 @@ ru:
       user: 'Пользователь'
     attributes:
       user:
-        first_name: 'Имя'
         last_name: 'Фамилия'
+        first_name: 'Имя'
+        middle_name: 'Отчество'
         email: 'Email'
         password: 'Пароль'
         password_confirmation: 'Подтверждение пароля'

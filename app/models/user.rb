@@ -9,7 +9,9 @@ class User < ActiveRecord::Base
 
   self.token_authentication_key = "oauth_token"
 
-  attr_accessible :email, :password, :password_confirmation, :remember_me, :first_name, :last_name, :id
+  attr_accessible :email, :password, :password_confirmation, :remember_me, :last_name, :first_name, :middle_name, :id
+
+  validates_presence_of :last_name, :first_name, :middle_name
 
   searchable do
     text :term do
@@ -18,7 +20,7 @@ class User < ActiveRecord::Base
   end
 
   def to_s
-    self.first_name.blank? && self.last_name.blank? ? self.email : "#{self.first_name} #{self.last_name}"
+   "#{self.first_name} #{self.middle_name} #{self.last_name}"
   end
 
   def apply_omniauth(omniauth)
@@ -57,5 +59,6 @@ end
 #  expiration_date      :date
 #  created_at           :datetime
 #  updated_at           :datetime
+#  middle_name          :string(255)
 #
 
