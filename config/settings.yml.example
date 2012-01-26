@@ -2,7 +2,7 @@ host:                     localhost:3000
 
 mailer:
   sender_email:           no-reply@localhost
-  smtp_settings:
+  smtp:
     address:              "smtp.gmail.com"
     port:                 587
     domain:               'baci.lindsaar.net'
