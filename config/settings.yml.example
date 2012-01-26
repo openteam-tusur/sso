@@ -1,19 +1,17 @@
+host:                     localhost:3000
+
+mailer:
+  sender_email:           no-reply@localhost
+  smtp_settings:
+    address:              "smtp.gmail.com"
+    port:                 587
+    domain:               'baci.lindsaar.net'
+    user_name:            '<username>'
+    password:             '<password>'
+    authentication:       'plain'
+    enable_starttls_auto: true
+
 production:
   hoptoad:
-    api_key:        key
-    host:           host
-  mailer:
-    app_host:       your.production.domain.com
-    smtp_address:   smtp.domain.com
-    smtp_port:      25
-    sender_email:   no-reply@domain.com
-
-development:
-  hoptoad:
-    api_key:        key
-    host:           host
-  mailer:
-    app_host:       localhost:3000
-    smtp_address:   localhost
-    smtp_port:      25
-    sender_email:   no-reply@localhost
+    api_key:              key
+    host:                 host
