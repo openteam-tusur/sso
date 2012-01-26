@@ -13,9 +13,9 @@ class User < ActiveRecord::Base
 
   attr_accessible :email, :password, :password_confirmation, :remember_me, :last_name, :first_name, :middle_name, :id
 
-  validates_presence_of :last_name, :first_name, :middle_name
-
-  validates_format_of :last_name, :first_name, :middle_name, :with => /^[А-ЯЁ][а-яё -]*[а-яё]$/, :message => :contains_not_cyrillic_chars
+  validates :last_name, :first_name, :middle_name, :presence => true,
+                                                   :format => { :with => /^[А-ЯЁ][а-яё -]*[а-яё]$/, :message => :contains_not_cyrillic_chars },
+                                                   :unless => :admin?
 
   searchable do
     text :term do

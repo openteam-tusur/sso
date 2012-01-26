@@ -4,16 +4,16 @@
   <%= devise_error_messages! %>
 
   <%= form.inputs :class => 'inputs inline_fieldset' do %>
-    <%= form.input :first_name, :input_html => { :autofocus => true } %>
-    <%= form.input :middle_name %>
-    <%= form.input :last_name %>
+    <%= form.input :first_name, :required => true, :input_html => { :autofocus => true } %>
+    <%= form.input :middle_name, :required => true %>
+    <%= form.input :last_name, :required => true %>
   <% end %>
   <%= form.inputs do %>
-    <%= form.input :email %>
+    <%= form.input :email, :required => true %>
   <% end %>
   <%= form.inputs :class => 'inputs inline_fieldset' do %>
-    <%= form.input :password %>
-    <%= form.input :password_confirmation %>
+    <%= form.input :password, :required => true, :input_html => { :autocomplete => :off } %>
+    <%= form.input :password_confirmation, :required => true %>
   <% end %>
   <%= form.buttons do %>
     <%= form.commit_button :label => 'Зарегистрироваться', :button_html => { :class => 'button' } %>

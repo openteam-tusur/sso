@@ -7,15 +7,15 @@
 <%= semantic_form_for resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put } do | form | %>
   <%= devise_error_messages! %>
   <%= form.inputs do %>
-    <%= form.input :current_password, :required => true, :input_html => { :autofocus => true, :value => nil, :autocomplete => 'off' } %>
+    <%= form.input :current_password, :required => true, :input_html => { :autofocus => true, :autocomplete => :off } %>
   <% end %>
   <%= form.inputs :class => 'inputs inline_fieldset' do %>
-    <%= form.input :first_name %>
-    <%= form.input :middle_name %>
-    <%= form.input :last_name %>
+    <%= form.input :first_name, :required => true %>
+    <%= form.input :middle_name, :required => true %>
+    <%= form.input :last_name, :required => true %>
   <% end %>
   <%= form.inputs do %>
-    <%= form.input :email, :input_html => { :disabled => :disabled } %>
+    <%= form.input :email, :required => true, :input_html => { :disabled => :disabled } %>
   <% end %>
   <%= form.inputs :class => 'inputs inline_fieldset' do %>
     <%= form.input :password %>
