@@ -19,5 +19,5 @@ $(function() {
     hide_flash_block();
   });
   $("#flash_block").stop(true, true);
-  setTimeout("hide_flash_block();", 15000);
+  setTimeout("hide_flash_block();", 20000);
 });

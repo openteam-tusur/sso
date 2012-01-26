@@ -1,8 +1,13 @@
+# encoding: utf-8
+
 class AuthController < ApplicationController
   before_filter :authenticate_user!, :except => [:access_token]
   skip_before_filter :verify_authenticity_token, :only => [:access_token]
 
   def welcome
+    if current_user.last_name.blank? || current_user.first_name.blank? || current_user.middle_name.blank?
+      flash[:error] = 'Внимание! В Вашем профиле не все обязательные поля заполнены. Пожалуйста исправьте'
+    end
   end
 
   def authorize
