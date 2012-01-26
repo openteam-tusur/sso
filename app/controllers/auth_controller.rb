@@ -5,15 +5,16 @@ class AuthController < ApplicationController
   skip_before_filter :verify_authenticity_token, :only => [:access_token]
 
   def welcome
-    if current_user.last_name.blank? || current_user.first_name.blank? || current_user.middle_name.blank?
-      flash[:error] = 'Внимание! В Вашем профиле не все обязательные поля заполнены. Пожалуйста исправьте'
+    unless current_user.valid?
+      flash[:error] = 'Внимание! Исправьте данные в профиле'
     end
   end
 
   def authorize
     AccessGrant.prune!
-    access_grant = current_user.access_grants.create(:client => application)
-    redirect_to access_grant.redirect_uri_for(params[:redirect_uri])
+    welcome
+    session[:referrer] = current_user.access_grants.create(:client => application).redirect_uri_for(params[:redirect_uri])
+    redirect_to session[:referrer] and return if current_user.valid?
   end
 
   def access_token
