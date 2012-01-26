@@ -15,6 +15,7 @@ ru:
   errors:
     messages:
       not_found: "не найден"
+      contains_not_cyrillic_chars: "должно состоять только из русских букв, с первой заглавной"
       not_saved:
         one: "Сохранение не удалось из-за %{count} ошибки"
         few: "Сохранение не удалось из-за %{count} ошибок"

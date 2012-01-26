@@ -1,3 +1,5 @@
+# encoding: utf-8
+
 class User < ActiveRecord::Base
   has_many :authentications, :dependent => :delete_all
   has_many :access_grants, :dependent => :delete_all
@@ -12,6 +14,8 @@ class User < ActiveRecord::Base
   attr_accessible :email, :password, :password_confirmation, :remember_me, :last_name, :first_name, :middle_name, :id
 
   validates_presence_of :last_name, :first_name, :middle_name
+
+  validates_format_of :last_name, :first_name, :middle_name, :with => /^[А-ЯЁ][а-яё -]*[а-яё]$/, :message => :contains_not_cyrillic_chars
 
   searchable do
     text :term do

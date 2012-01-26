@@ -1,9 +1,11 @@
 @import 'compass/utilities'
 @import 'compass/css3'
 
+$input_width: 148px
+
 =input_style
   font-size: 12px
-  width: 148px
+  width: $input_width
   font-family: Arial, Verdana, sans-serif
   background-color: #fff
   border: 1px solid #555
@@ -36,6 +38,7 @@
     .string,
     .email,
     .password
+      width: $input_width + 12
       label
         display: block
         margin-bottom: 2px
@@ -44,6 +47,11 @@
     .boolean
       input
         margin-right: 5px
+    .error
+      input
+        border-color: #880000
+        &:focus
+          border-color: #555
   .buttons
     +clearfix
     margin-top: 10px
@@ -80,3 +88,6 @@
   #user_password_input,
   #user_password_confirmation_input
     margin-right: 10px
+
+  #user_current_password_input
+    width: auto
