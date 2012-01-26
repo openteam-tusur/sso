@@ -4,4 +4,4 @@
 # If you change this key, all old signed cookies will become invalid!
 # Make sure the secret is at least 30 characters and all random,
 # no regular words or you'll be exposed to dictionary attacks.
-OauthProviderDemo::Application.config.secret_token = '16a18b5f4160afbfa2a0ec7b78a4903e0a63cfb819a641eaea6667be269eb13de6f8ae1073f897b735e21e488ede314d08ad856545cb8f16edd5c617cf5a00d3'
+Sso::Application.config.secret_token = '995dc6d02fdee97f5a5a59973af00b9130f212de620f6c72d4b47fa6300b8e0e202affa6296155d081d68e46b3914828ba197f5ce98a1045baffd2546cd6c607'

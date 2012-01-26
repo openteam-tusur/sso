@@ -1,4 +1,4 @@
-OauthProviderDemo::Application.routes.draw do
+Sso::Application.routes.draw do
   devise_for :users, :controllers => { :registrations => 'registrations',
                                        :sessions => 'sessions',
                                        :passwords => 'passwords' }
