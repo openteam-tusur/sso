@@ -19,12 +19,12 @@ class User < ActiveRecord::Base
 
   searchable do
     text :term do
-      "#{email} #{first_name} #{last_name}"
+      "#{email} #{name}"
     end
   end
 
-  def to_s
-   "#{self.first_name} #{self.middle_name} #{self.last_name}"
+  def name
+    [first_name, middle_name, last_name].join(' ')
   end
 
   def apply_omniauth(omniauth)
@@ -40,6 +40,7 @@ class User < ActiveRecord::Base
     self.expiration_date = 1.year.from_now
   end
 
+  alias :to_s :name
 end
 # == Schema Information
 #
