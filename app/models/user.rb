@@ -40,6 +40,10 @@ class User < ActiveRecord::Base
     self.expiration_date = 1.year.from_now
   end
 
+  def regular?
+    !admin?
+  end
+
   alias :to_s :name
 end
 # == Schema Information
