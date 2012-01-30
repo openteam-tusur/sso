@@ -10,6 +10,7 @@
   <body>
     <div class="content">
       <% flash.each do |name, msg| %>
+        <% next unless %w[notice alert error].include?(name.to_s) %>
         <div class="flash_<%= name %>" id="flash_block">
           <%= link_to 'закрыть', '#', :title => 'закрыть' %>
           <%= content_tag :p, msg %>
