@@ -4,7 +4,7 @@ class UsersController < ApplicationController
   has_searcher
 
   def index
-    render :json => searcher.results
+    render :json => searcher.results.as_json(:only => :email, :methods => [:uid, :name])
   end
 
 end

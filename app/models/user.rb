@@ -17,6 +17,8 @@ class User < ActiveRecord::Base
                                                    :format => { :with => /^[А-ЯЁ][а-яё -]*[а-яё]$/, :message => :contains_not_cyrillic_chars },
                                                    :unless => :admin?
 
+  alias_attribute :uid, :id
+
   searchable do
     text :term do
       "#{email} #{name}"
@@ -24,7 +26,7 @@ class User < ActiveRecord::Base
   end
 
   def name
-    [first_name, middle_name, last_name].join(' ')
+    [first_name, middle_name, last_name].keep_if(&:present?).join(' ')
   end
 
   def apply_omniauth(omniauth)
