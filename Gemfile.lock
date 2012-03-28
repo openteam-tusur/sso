@@ -59,7 +59,7 @@ GEM
       actionpack (~> 3.0)
     fssm (0.2.8.1)
     has_scope (0.5.1)
-    has_searcher (0.0.11)
+    has_searcher (0.0.13)
       rails
     hashie (1.2.0)
     hike (1.2.1)
@@ -79,12 +79,12 @@ GEM
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
     mime-types (1.18)
-    multi_json (1.2.0)
+    multi_json (1.1.0)
     nokogiri (1.5.2)
     omniauth (1.0.3)
       hashie (~> 1.2)
       rack
-    openteam-commons (0.1.0)
+    openteam-commons (0.1.2)
       airbrake
       configliere
       rails
@@ -152,7 +152,7 @@ GEM
       polyglot
       polyglot (>= 0.3.1)
     tzinfo (0.3.32)
-    uglifier (1.2.3)
+    uglifier (1.2.4)
       execjs (>= 0.3.0)
       multi_json (>= 1.0.2)
     unicorn (4.2.1)
