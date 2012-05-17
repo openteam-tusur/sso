@@ -1,13 +1,13 @@
 source :rubygems
 
 group :assets do
-  gem 'compass-rails'
-  gem 'sass-rails'
   gem 'therubyracer'                                                            unless RUBY_PLATFORM =~ /freebsd/
   gem 'uglifier'
 end
 
 group :default do
+  gem 'sass-rails'
+  gem 'compass-rails'
   gem 'configliere'
   gem 'default_value_for'
   gem 'devise'
