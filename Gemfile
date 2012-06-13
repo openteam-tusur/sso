@@ -20,12 +20,12 @@ group :default do
   gem 'openteam-commons'
   gem 'rails',                                      :require => false
   gem 'russian'
-  gem 'sunspot_rails'
+  gem 'sunspot_rails',      '>= 2.0.0.pre.120417'
 end
 
 group :development do
-  gem 'annotate',             '~> 2.4.1.beta1'
-  gem 'sunspot_solr'
+  gem 'annotate',           '~> 2.4.1.beta1'
+  gem 'sunspot_solr',       '>= 2.0.0.pre.120417',  :require => false
 end
 
 group :production do
