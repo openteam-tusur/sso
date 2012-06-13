@@ -18,6 +18,7 @@ group :default do
   gem 'jquery-rails'
   gem 'omniauth'
   gem 'openteam-commons'
+  gem 'progress_bar',                               :require => false
   gem 'rails',                                      :require => false
   gem 'russian'
   gem 'sunspot_rails',      '>= 2.0.0.pre.120417'
