@@ -3,7 +3,7 @@ app:
   secret:       SECRET
 
 mailer:
-  sender_mail:  no-reply@sso.openteam.ru
+  sender_email: no-reply@sso.openteam.ru
   smtp:
     address:    localhost
 
