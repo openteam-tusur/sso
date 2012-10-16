@@ -19,7 +19,7 @@ task :import_tusur_group_leaders => :environment do
         user.save!
         student['uid'] = user.id
         bar.increment!
-      end
+      end unless student['uid']
     end
   end
 
