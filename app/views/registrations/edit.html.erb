@@ -11,8 +11,8 @@
   <% end %>
   <%= form.inputs :class => 'inputs inline_fieldset' do %>
     <%= form.input :first_name, :required => resource.regular? %>
-    <%= form.input :middle_name, :required => resource.regular? %>
     <%= form.input :last_name, :required => resource.regular? %>
+    <%= form.input :middle_name %>
   <% end %>
   <%= form.inputs do %>
     <%= form.input :email, :required => true, :input_html => { :disabled => :disabled } %>

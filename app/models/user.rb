@@ -13,9 +13,18 @@ class User < ActiveRecord::Base
 
   attr_accessible :email, :password, :password_confirmation, :remember_me, :last_name, :first_name, :middle_name, :id
 
-  validates :last_name, :first_name, :middle_name, :presence => true,
-                                                   :format => { :with => /^[А-ЯЁ][а-яё -]*[а-яё]$/, :message => :contains_not_cyrillic_chars },
-                                                   :unless => :admin?
+  NAME_FORMAT = /^[А-ЯЁ][а-яё -]*[а-яё]$/
+  validates_presence_of :last_name, :first_name
+
+  validates_format_of :last_name, :first_name,  :with => NAME_FORMAT,
+                                                :message => :contains_not_cyrillic_chars,
+                                                :unless => :admin?
+
+  validates_format_of :middle_name, :with => NAME_FORMAT,
+                                    :message => :contains_not_cyrillic_chars,
+                                    :if => :middle_name?,
+                                    :unless => :admin?
+
 
   alias_attribute :uid, :id
 
