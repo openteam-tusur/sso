@@ -17,7 +17,7 @@ task :import_tusur_group_leaders => :environment do
             user.first_name            = student['name']
             user.last_name             = student['surname']
             user.middle_name           = student['patronymic']
-            user.password              = student['password'] || sprintf("%08d", SecureRandom.random_number(10**8))
+            user.password              = sprintf("%08d", SecureRandom.random_number(10**8))
             user.password_confirmation = user.password
             user.save!
 
