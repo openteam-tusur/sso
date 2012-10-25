@@ -8,10 +8,11 @@ task :import_tusur_group_leaders => :environment do
   list['group_leader'].each do |faculty, groups|
     bar = ProgressBar.new(groups.count)
     puts faculty
-    user = nil
+    record = nil
     begin
       User.transaction do
         groups.each do |_, student|
+          record = student
           next if student['uid']
           student['password'] ||= sprintf("%08d", SecureRandom.random_number(10**8))
           user = User.find_or_initialize_by_email(student['email'])
@@ -28,10 +29,10 @@ task :import_tusur_group_leaders => :environment do
     rescue => e
       puts
       puts
-      user_name_with_email = "#{user.name} <#{user.email}>"
-      divider = "-" * (user_name_with_email.length + 4)
+      user_name = "#{record['surname']} #{record['name']} <#{record['email']}>"
+      divider = "-" * (user_name.length + 4)
       puts divider
-      puts "| #{user_name_with_email} |"
+      puts "| #{user_name} |"
       puts divider
       puts
       raise e
