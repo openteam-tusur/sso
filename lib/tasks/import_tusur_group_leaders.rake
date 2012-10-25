@@ -6,12 +6,16 @@ task :import_tusur_group_leaders => :environment do
   yml_path = ENV['YML_PATH'] || "#{File.dirname(File.expand_path(__FILE__))}/group_leaders.yml"
   list = YAML.load_file(yml_path)
   list['group_leader'].each do |faculty, students|
-    bar = ProgressBar.new(students.count)
+    filtered_students = students.reject{|s| s['uid']}
+    next if filtered_students.empty?
+
+    bar = ProgressBar.new(filtered_students.count)
     puts faculty
     current = nil
+
     begin
       User.transaction do
-        students.each do |student|
+        filtered_students.each do |student|
           current = student
           User.find_or_initialize_by_email(student['email']).tap do |user|
             user.first_name            = student['name']
@@ -23,7 +27,7 @@ task :import_tusur_group_leaders => :environment do
 
             student['password']        = user.password
             student['uid']             = user.id
-          end unless student['uid']
+          end
           bar.increment!
         end
       end
