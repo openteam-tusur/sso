@@ -4,7 +4,7 @@ require 'progress_bar'
 require File.expand_path '../import_tusur_users', __FILE__
 
 def filter(record)
-  ENV['MAIL'] ? record['email'] == ENV['MAIL'] : !record['uid']
+  ENV['EMAIL'] ? record['email'] == ENV['EMAIL'] : !record['uid']
 end
 
 def process_user(record)
