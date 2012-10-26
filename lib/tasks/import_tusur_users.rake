@@ -11,7 +11,7 @@ def process_user(record)
   User.find_or_initialize_by_email(record['email']).tap do |user|
     user.first_name  ||= record['name']
     user.last_name   ||= record['surname']
-    user.middle_name ||= record['patronymic']
+    user.middle_name ||= record['patronymic'].presence
 
     if user.new_record?
       record['password']         ||= sprintf("%08d", SecureRandom.random_number(10**8))
@@ -23,7 +23,7 @@ def process_user(record)
 
     record['name']       = user.first_name
     record['surname']    = user.last_name
-    record['patronymic'] = user.middle_name
+    record['patronymic'] = user.middle_name.presence
     record['uid']        = user.id
   end
 end
