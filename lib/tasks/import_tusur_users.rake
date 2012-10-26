@@ -9,15 +9,22 @@ end
 
 def process_user(record)
   User.find_or_initialize_by_email(record['email']).tap do |user|
-    user.first_name            = record['name']
-    user.last_name             = record['surname']
-    user.middle_name           = record['patronymic']
-    user.password              = record['password'] || sprintf("%08d", SecureRandom.random_number(10**8))
-    user.password_confirmation = user.password
+    user.first_name  ||= record['name']
+    user.last_name   ||= record['surname']
+    user.middle_name ||= record['patronymic']
+
+    if user.new_record?
+      record['password']         ||= sprintf("%08d", SecureRandom.random_number(10**8))
+      user.password                = record['password']
+      user.password_confirmation   = record['password']
+    end
+
     user.save!
 
-    record['password']        = user.password
-    record['uid']             = user.id
+    record['name']       = user.first_name
+    record['surname']    = user.last_name
+    record['patronymic'] = user.middle_name
+    record['uid']        = user.id
   end
 end
 
