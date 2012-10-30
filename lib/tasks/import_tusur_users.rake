@@ -8,7 +8,7 @@ def filter(record)
 end
 
 def process_user(record)
-  (User.find(record['uid']) || User.find_or_initialize_by_email(record['email'])).tap do |user|
+  (User.find(record['uid'].to_i) || User.find_or_initialize_by_email(record['email'])).tap do |user|
     user.first_name  ||= record['name']
     user.last_name   ||= record['surname']
     user.middle_name ||= record['patronymic']
