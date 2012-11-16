@@ -41,7 +41,6 @@ class AuthController < ApplicationController
   end
 
   def user
-    debugger
     hash = {
       :provider => 'identity',
       :uid => current_user.id.to_s,
@@ -50,6 +49,9 @@ class AuthController < ApplicationController
         :email => current_user.email,
         :first_name => current_user.first_name,
         :last_name => current_user.last_name
+      },
+      :user => {
+        :middle_name => current_user.middle_name
       }
     }
     render :json => hash.to_json
