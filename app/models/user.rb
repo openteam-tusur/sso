@@ -11,10 +11,12 @@ class User < ActiveRecord::Base
 
   self.token_authentication_key = "oauth_token"
 
-  attr_accessible :email, :password, :password_confirmation, :remember_me, :last_name, :first_name, :middle_name, :id
+  attr_accessible :email, :password, :password_confirmation, :remember_me, :last_name, :first_name, :middle_name
 
   NAME_FORMAT = /^[А-ЯЁ][а-яё -]*[а-яё]$/
-  validates_presence_of :last_name, :first_name
+  validates_presence_of :first_name
+
+  validates_presence_of :last_name, :unless => :admin?
 
   validates_format_of :last_name, :first_name,  :with => NAME_FORMAT,
                                                 :message => :contains_not_cyrillic_chars,
