@@ -10,8 +10,8 @@
     <%= form.input :current_password, :required => true, :input_html => { :autofocus => true, :autocomplete => :off } %>
   <% end %>
   <%= form.inputs :class => 'inputs inline_fieldset' do %>
-    <%= form.input :first_name, :required => resource.regular? %>
     <%= form.input :last_name, :required => resource.regular? %>
+    <%= form.input :first_name, :required => resource.regular? %>
     <%= form.input :middle_name %>
   <% end %>
   <%= form.inputs do %>
