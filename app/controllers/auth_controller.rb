@@ -13,8 +13,9 @@ class AuthController < ApplicationController
   def authorize
     AccessGrant.prune!
     welcome
-    session[:referrer] = current_user.access_grants.create(:client => application).redirect_uri_for(params[:redirect_uri])
-    redirect_to session[:referrer] and return if current_user.valid?
+    access_grant = current_user.access_grants.create({:client => application, :state => params[:state]}, :without_protection => true)
+    session[:referrer] = access_grant.redirect_uri_for(params[:redirect_uri])
+    redirect_to session[:referrer] if current_user.valid?
   end
 
   def access_token
@@ -40,6 +41,7 @@ class AuthController < ApplicationController
   end
 
   def user
+    debugger
     hash = {
       :provider => 'identity',
       :uid => current_user.id.to_s,

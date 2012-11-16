@@ -18,17 +18,17 @@ class AccessGrant < ActiveRecord::Base
 
   def redirect_uri_for(redirect_uri)
     if redirect_uri =~ /\?/
-      redirect_uri + "&code=#{code}&response_type=code"
+      redirect_uri + "&code=#{code}&response_type=code&state=#{state}"
     else
-      redirect_uri + "?code=#{code}&response_type=code"
+      redirect_uri + "?code=#{code}&response_type=code&state=#{state}"
     end
   end
 
-  # Note: This is currently hard coded to 2 days, but it could be configurable 
+  # Note: This is currently hard coded to 2 days, but it could be configurable
   # per-user-type or per-application.
   # No need for this to be constant like this.
   def start_expiry_period!
-    self.update_attribute(:access_token_expires_at, 2.days.from_now)
+    self.update_attribute(:access_token_expires_at, Devise.timeout_in.from_now)
   end
 end
 # == Schema Information
