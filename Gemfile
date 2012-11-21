@@ -8,7 +8,6 @@ end
 group :default do
   gem 'compass-rails'
   gem 'configliere'
-  gem 'debugger'
   gem 'default_value_for'
   gem 'devise'
   gem 'devise-russian'
@@ -26,6 +25,7 @@ end
 
 group :development do
   gem 'annotate'
+  gem 'debugger'
   gem 'sunspot_solr',       '>= 2.0.0.pre.120417',  :require => false
 end
 
