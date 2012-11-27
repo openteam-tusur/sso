@@ -2,6 +2,7 @@ ru:
   activerecord:
     models:
       user: 'Пользователь'
+
     attributes:
       user:
         last_name: 'Фамилия'
@@ -12,15 +13,30 @@ ru:
         password_confirmation: 'Подтверждение пароля'
         current_password: 'Текущий пароль'
         remember_me: 'Запомнить меня'
-  errors:
-    messages:
-      not_found: "не найден"
-      contains_not_cyrillic_chars: "должно состоять только из русских букв, первая заглавная"
-      not_saved:
-        one: "Сохранение не удалось из-за %{count} ошибки"
-        few: "Сохранение не удалось из-за %{count} ошибок"
-        many: "Сохранение не удалось из-за %{count} ошибок"
-        other: "Сохранение не удалось из-за %{count} ошибки"
+
+    errors:
+      messages:
+        invalid_email_address:        не похож на адрес электронной почты
+
+      models:
+        user:
+          attributes:
+            first_name:
+              contains_not_cyrillic_chars:  должно состоять только из русских букв, первая заглавная
+            middle_name:
+              contains_not_cyrillic_chars:  должно состоять только из русских букв, первая заглавная
+            last_name:
+              contains_not_cyrillic_chars:  должна состоять только из русских букв, первая заглавная
+            email:
+              invalid_email_address:        не похож на адрес электронной почты
+
+  activemodel:
+    errors:
+      messages:
+        invalid_email_address:        не похож на адрес электронной почты
+
+
+
   formtastic:
     :yes: 'Да'
     :no: 'Нет'
