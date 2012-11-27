@@ -13,20 +13,23 @@ class User < ActiveRecord::Base
 
   attr_accessible :email, :password, :password_confirmation, :remember_me, :last_name, :first_name, :middle_name
 
-  NAME_FORMAT = /^([А-ЯЁ][а-яё]*)([ -][А-ЯЁ]?[а-яё]+)*$/
+  VALIDATORS = {
+    :should_contains_only_cyrillic_chars => /^[а-яё -]+$/i,
+    :should_starts_with_capital_letter => /^[А-ЯЁ]/,
+    :should_looks_like_name => /^([А-ЯЁ][а-яё]*)([ -][А-ЯЁ]?[а-яё]+)*$/
+  }
+
 
   validates_presence_of :first_name
 
   validates_presence_of :last_name, :unless => :admin?
 
-  validates_format_of :last_name, :first_name,  :with => NAME_FORMAT,
-                                                :message => :contains_not_cyrillic_chars,
-                                                :unless => :admin?
-
-  validates_format_of :middle_name, :with => NAME_FORMAT,
-                                    :message => :contains_not_cyrillic_chars,
-                                    :if => :middle_name?,
-                                    :unless => :admin?
+  VALIDATORS.each do |message, format|
+    validates_format_of :last_name, :first_name, :middle_name, :with => format,
+                                                               :message => message,
+                                                               :allow_nil => true,
+                                                               :unless => :admin?
+  end
 
   validates_length_of :last_name, :first_name, :middle_name, :email, :maximum => 255
 
