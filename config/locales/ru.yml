@@ -24,15 +24,15 @@ ru:
             first_name:
               should_contains_only_cyrillic_chars:  должно состоять только из русских букв
               should_starts_with_capital_letter:    должно начинаться с заглавной буквы
-              should_looks_like_name:               не похоже на имя
+              should_looks_like_name:               должно заканчиваться строчными буквами
             middle_name:
               should_contains_only_cyrillic_chars:  должно состоять только из русских букв
               should_starts_with_capital_letter:    должно начинаться с заглавной буквы
-              should_looks_like_name:               не похоже на отчество
+              should_looks_like_name:               должно заканчиваться строчными буквами
             last_name:
               should_contains_only_cyrillic_chars:  должна состоять только из русских букв
               should_starts_with_capital_letter:    должна начинаться с заглавной буквы
-              should_looks_like_name:               не похоже на фамилию
+              should_looks_like_name:               должна заканчиваться строчными буквами
             email:
               invalid_email_address:        не похож на адрес электронной почты
 

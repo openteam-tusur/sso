@@ -10,6 +10,7 @@ describe User do
     it { should allow_value("Иван жак").for(field) }
     it { should_not allow_value("Иван_жак").for(field).with_message("#{options[:error_message_start_with]} состоять только из русских букв") }
     it { should_not allow_value("иваН").for(field).with_message("#{options[:error_message_start_with]} начинаться с заглавной буквы") }
+    it { should_not allow_value("ИваН").for(field).with_message("#{options[:error_message_start_with]} заканчиваться строчными буквами") }
     it { should_not allow_value("иван").for(field) }
     it { should_not allow_value("иван-Жак").for(field) }
   end
@@ -23,7 +24,6 @@ describe User do
     it { should validate_presence_of :first_name }
     it_should_behave_like :field_with_squish_normalizator, :first_name
     it_should_behave_like :field_with_only_cyrillic_letters, :first_name, :error_message_start_with => 'должно'
-    it { should_not allow_value("ИваН").for(:first_name).with_message("не похоже на имя") }
   end
 
   describe '#middle_name' do
