@@ -6,6 +6,7 @@ group :assets do
 end
 
 group :default do
+  gem 'attribute_normalizer'
   gem 'compass-rails'
   gem 'configliere'
   gem 'default_value_for'
@@ -14,6 +15,7 @@ group :default do
   gem 'formtastic',         '~> 2.1.0'
   gem 'inherited_resources'
   gem 'jquery-rails'
+  gem 'validates_email_format_of'
   gem 'omniauth'
   gem 'openteam-commons'
   gem 'progress_bar',                               :require => false
@@ -34,5 +36,7 @@ group :production do
 end
 
 group :test do
+  gem 'rspec-rails'
+  gem 'shoulda-matchers'
   gem 'sqlite3',                                    :require => false
 end

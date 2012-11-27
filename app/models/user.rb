@@ -13,7 +13,7 @@ class User < ActiveRecord::Base
 
   attr_accessible :email, :password, :password_confirmation, :remember_me, :last_name, :first_name, :middle_name
 
-  NAME_FORMAT = /^[А-ЯЁ][а-яё -]*[а-яё]$/
+  NAME_FORMAT = /^([А-ЯЁ][а-яё]*)([ -][А-ЯЁ]?[а-яё]+)*$/
 
   validates_presence_of :first_name
 
@@ -30,7 +30,13 @@ class User < ActiveRecord::Base
 
   validates_length_of :last_name, :first_name, :middle_name, :email, :maximum => 255
 
+  validates :email, :email_format => true
+
   alias_attribute :uid, :id
+
+  normalize_attribute :email
+  normalize_attribute :first_name, :last_name, :middle_name, :with => [:squish, :blank]
+
 
   searchable do
     text :term do
