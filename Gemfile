@@ -29,6 +29,7 @@ group :development do
   gem 'annotate'
   gem 'debugger'
   gem 'sunspot_solr',       '>= 2.0.0.pre.120417',  :require => false
+  gem 'rvm-capistrano'
 end
 
 group :production do
