@@ -32,7 +32,7 @@ def process
         elsif record['faculty']
           process_dean(record)
         else
-          raise 'неизвестный тип записи'
+          process_gpo_user(record, :validate => false)
         end
         bar.increment!
       end

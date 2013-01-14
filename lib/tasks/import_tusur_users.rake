@@ -7,7 +7,7 @@ def filter(record)
   ENV['EMAIL'] ? record['email'] == ENV['EMAIL'] : !record['uid']
 end
 
-def process_user(record)
+def process_user(record, options={})
   (User.find_by_id(record['uid']) || User.find_or_initialize_by_email(record['email'])).tap do |user|
     user.first_name  ||= record['name']
     user.last_name   ||= record['surname']
@@ -20,7 +20,7 @@ def process_user(record)
       user.password_confirmation   = record['password']
     end
 
-    user.save!
+    user.save!(options)
 
     record['name']       = user.first_name
     record['surname']    = user.last_name
@@ -31,6 +31,7 @@ end
 
 alias :process_dean :process_user
 alias :process_student :process_user
+alias :process_gpo_user :process_user
 
 desc 'Импорт пользователей ТУСУР в sso'
 task :import_tusur_users => :environment do
