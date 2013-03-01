@@ -3,6 +3,7 @@ class AccessGrant < ActiveRecord::Base
   belongs_to :client
   before_create :generate_tokens
 
+  attr_accessible :code, :access_token, :refresh_token, :access_token_expires_at, :user_id, :client_id
 
   def self.prune!
     delete_all(["created_at < ?", 3.days.ago])

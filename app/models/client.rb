@@ -1,5 +1,7 @@
 class Client < ActiveRecord::Base
 
+  attr_accessible :name, :app_id, :app_secret
+
   default_value_for :app_id do random_string(24) end
 
   default_value_for :app_secret do random_string(48) end

@@ -1,7 +1,7 @@
-source :rubygems
+source 'http://rubygems.org'
 
 group :assets do
-  gem 'therubyracer'                                                            unless RUBY_PLATFORM =~ /freebsd/
+  gem 'therubyracer'                                unless RUBY_PLATFORM =~ /freebsd/
   gem 'uglifier'
 end
 
@@ -19,7 +19,7 @@ group :default do
   gem 'omniauth'
   gem 'openteam-commons'
   gem 'progress_bar',                               :require => false
-  gem 'rails',                                      :require => false
+  gem 'rails',              '~> 3.2.12',            :require => false
   gem 'russian'
   gem 'sass-rails'
   gem 'sunspot_rails',      '>= 2.0.0.pre.120417'
@@ -27,6 +27,7 @@ end
 
 group :development do
   gem 'annotate'
+  gem 'brakeman'
   gem 'debugger'
   gem 'sunspot_solr',       '>= 2.0.0.pre.120417',  :require => false
   gem 'rvm-capistrano'
