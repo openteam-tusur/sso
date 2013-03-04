@@ -2,7 +2,7 @@ require "bundler/capistrano"
 require "rvm/capistrano"
 
 load "config/deploy/settings"
-load "config/deploy/assets"
+#load "config/deploy/assets"
 
 namespace :deploy do
   desc "Copy config files"
@@ -11,7 +11,7 @@ namespace :deploy do
     run "ln -s #{deploy_to}/shared/config/database.yml #{release_path}/config/database.yml"
   end
 
-  desc "HASK copy right unicorn.rb file"
+  desc "Copy unicorn.rb file"
   task :copy_unicorn_config do
     run "mv #{deploy_to}/current/config/unicorn.rb #{deploy_to}/current/config/unicorn.rb.example"
     run "ln -s #{deploy_to}/shared/config/unicorn.rb #{deploy_to}/current/config/unicorn.rb"
@@ -19,8 +19,7 @@ namespace :deploy do
 
   desc "Reload Unicorn"
   task :reload_servers do
-    sudo "/etc/init.d/nginx reload"
-    sudo "/etc/init.d/#{unicorn_instance_name} restart"
+    run "/usr/local/etc/rc.d/#{unicorn_instance_name} restart"
   end
 
   desc "Airbrake notify"
