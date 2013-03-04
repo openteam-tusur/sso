@@ -250,6 +250,7 @@ DEPENDENCIES
   default_value_for
   devise
   devise-russian
+  execjs
   formtastic (~> 2.1.0)
   inherited_resources
   jquery-rails

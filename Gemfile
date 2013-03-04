@@ -1,12 +1,14 @@
 source 'http://rubygems.org'
 
 group :assets do
+  gem 'compass-rails'
+  gem 'sass-rails'
+  gem 'execjs'
   gem 'uglifier'
 end
 
 group :default do
   gem 'attribute_normalizer'
-  gem 'compass-rails'
   gem 'configliere'
   gem 'default_value_for'
   gem 'devise'
@@ -20,7 +22,6 @@ group :default do
   gem 'progress_bar',                               :require => false
   gem 'rails',              '~> 3.2.12',            :require => false
   gem 'russian'
-  gem 'sass-rails'
   gem 'sunspot_rails',      '>= 2.0.0.pre.120417'
 end
 
