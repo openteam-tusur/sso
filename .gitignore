@@ -1,6 +1,7 @@
 /.bundle
 /bin
 /config/database.yml
+/config/deploy.yml
 /config/initializers/omniauth.rb
 /config/settings.yml
 /config/sunspot.yml
