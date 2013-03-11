@@ -28,9 +28,9 @@ end
 group :development do
   gem 'annotate'
   gem 'brakeman'
-  gem 'debugger'
   gem 'sunspot_solr',       '>= 2.0.0.pre.120417',  :require => false
   gem 'rvm-capistrano'
+  gem 'capistrano-ext'
   gem 'therubyracer'
 end
 
