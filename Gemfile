@@ -4,6 +4,7 @@ group :assets do
   gem 'compass-rails'
   gem 'sass-rails'
   gem 'execjs'
+  gem 'turbo-sprockets-rails3'
   gem 'uglifier'
 end
 
