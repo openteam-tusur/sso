@@ -22,13 +22,13 @@ group :default do
   gem 'progress_bar',                               :require => false
   gem 'rails',              '~> 3.2.13',            :require => false
   gem 'russian'
-  gem 'sunspot_rails',      '>= 2.0.0.pre.120417'
+  gem 'sunspot_rails',      '~> 2.0.0'
 end
 
 group :development do
   gem 'annotate'
   gem 'brakeman'
-  gem 'sunspot_solr',       '>= 2.0.0.pre.120417',  :require => false
+  gem 'sunspot_solr',       '~> 2.0.0',  :require => false
   gem 'rvm-capistrano'
   gem 'capistrano-ext'
   gem 'therubyracer'
