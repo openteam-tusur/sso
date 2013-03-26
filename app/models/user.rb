@@ -40,13 +40,6 @@ class User < ActiveRecord::Base
   normalize_attribute :email
   normalize_attribute :first_name, :last_name, :middle_name, :with => [:squish, :blank]
 
-
-  searchable do
-    text :term do
-      "#{email} #{name}"
-    end
-  end
-
   def name
     [first_name, middle_name, last_name].keep_if(&:present?).join(' ')
   end

@@ -22,7 +22,6 @@ group :default do
   gem 'progress_bar',                               :require => false
   gem 'rails',                                      :require => false
   gem 'russian'
-  gem 'sunspot_rails'
   gem 'validates_email_format_of'
 end
 
@@ -32,7 +31,6 @@ group :development do
   gem 'capistrano-db-tasks', :git => 'git://github.com/openteam/capistrano-db-tasks'
   gem 'capistrano-unicorn',  :git => 'git://github.com/sosedoff/capistrano-unicorn'
   gem 'openteam-capistrano'
-  gem 'sunspot_solr',                               :require => false
 end
 
 group :production do
