@@ -1,5 +1,1 @@
-require 'bundler/capistrano'
-require 'rvm/capistrano'
-require 'capistrano/ext/multistage'
-
-set :stages, %w(ato)
+require 'openteam/capistrano/recipes'

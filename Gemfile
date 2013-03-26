@@ -2,8 +2,8 @@ source 'http://rubygems.org'
 
 group :assets do
   gem 'compass-rails'
-  gem 'sass-rails'
   gem 'execjs'
+  gem 'sass-rails'
   gem 'turbo-sprockets-rails3'
   gem 'uglifier'
 end
@@ -17,22 +17,22 @@ group :default do
   gem 'formtastic',         '~> 2.1.0'
   gem 'inherited_resources'
   gem 'jquery-rails'
-  gem 'validates_email_format_of'
   gem 'omniauth'
   gem 'openteam-commons'
   gem 'progress_bar',                               :require => false
   gem 'rails',                                      :require => false
   gem 'russian'
   gem 'sunspot_rails'
+  gem 'validates_email_format_of'
 end
 
 group :development do
   gem 'annotate'
   gem 'brakeman'
+  gem 'capistrano-db-tasks', :git => 'git://github.com/openteam/capistrano-db-tasks'
+  gem 'capistrano-unicorn',  :git => 'git://github.com/sosedoff/capistrano-unicorn'
+  gem 'openteam-capistrano'
   gem 'sunspot_solr',                               :require => false
-  gem 'rvm-capistrano'
-  gem 'capistrano-ext'
-  gem 'therubyracer'
 end
 
 group :production do
