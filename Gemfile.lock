@@ -255,15 +255,15 @@ DEPENDENCIES
   openteam-commons
   pg
   progress_bar
-  rails (~> 3.2.13)
+  rails
   rspec-rails
   russian
   rvm-capistrano
   sass-rails
   shoulda-matchers
   sqlite3
-  sunspot_rails (~> 2.0.0)
-  sunspot_solr (~> 2.0.0)
+  sunspot_rails
+  sunspot_solr
   therubyracer
   turbo-sprockets-rails3
   uglifier

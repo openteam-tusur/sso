@@ -21,15 +21,15 @@ group :default do
   gem 'omniauth'
   gem 'openteam-commons'
   gem 'progress_bar',                               :require => false
-  gem 'rails',              '~> 3.2.13',            :require => false
+  gem 'rails',                                      :require => false
   gem 'russian'
-  gem 'sunspot_rails',      '~> 2.0.0'
+  gem 'sunspot_rails'
 end
 
 group :development do
   gem 'annotate'
   gem 'brakeman'
-  gem 'sunspot_solr',       '~> 2.0.0',  :require => false
+  gem 'sunspot_solr',                               :require => false
   gem 'rvm-capistrano'
   gem 'capistrano-ext'
   gem 'therubyracer'
