@@ -25,7 +25,7 @@ class User < ActiveRecord::Base
   validates_presence_of :last_name, :unless => :admin?
 
   VALIDATORS.each do |message, format|
-    validates_format_of :last_name, :first_name, :middle_name, :with => format,
+    validates_format_of :last_name, :first_name, :with => format,
                                                                :message => message,
                                                                :allow_nil => true,
                                                                :unless => :admin?
