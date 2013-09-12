@@ -37,6 +37,7 @@ group :development do
 end
 
 group :production do
+  gem 'daemons'
   gem 'pg',                                         :require => false
 end
 
