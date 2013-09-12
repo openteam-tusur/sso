@@ -12,13 +12,16 @@ group :default do
   gem 'attribute_normalizer'
   gem 'configliere'
   gem 'default_value_for'
+  gem 'delayed_job_active_record'
   gem 'devise'
+  gem 'devise-async'
   gem 'devise-russian'
   gem 'formtastic',         '~> 2.1.0'
   gem 'inherited_resources'
   gem 'jquery-rails'
   gem 'omniauth'
   gem 'openteam-commons'
+  gem 'postmark-rails', '~> 0.5.2'
   gem 'progress_bar',                               :require => false
   gem 'rails',                                      :require => false
   gem 'russian'

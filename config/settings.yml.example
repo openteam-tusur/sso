@@ -3,9 +3,12 @@ app:
   secret:       SECRET
 
 mailer:
-  sender_email: no-reply@sso.openteam.ru
+  sender_email: email
+  delivery_method: 'postmark' || 'smtp'
   smtp:
     address:    localhost
+  postmark:
+    api_key:    key
 
 errors:
   key:          KEY
