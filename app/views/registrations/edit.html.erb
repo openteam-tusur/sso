@@ -1,34 +1,25 @@
 <h1>Редактирование профиля</h1>
 
 <p class='information'>
-  Если Вы не хотите изменять пароль, то оставте поля <b>&laquo;Пароль&raquo;</b> и <b>&laquo;Подтверждение пароля&raquo;</b> пустыми
+  Если Вы не хотите изменять пароль, то оставте поля <b>&laquo;Новый пароль&raquo;</b> и <b>&laquo;Подтверждение нового пароля&raquo;</b> пустыми
 </p>
 
-<%= semantic_form_for resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put } do | form | %>
+<%= simple_form_for resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put } do | form | %>
   <%= devise_error_messages! %>
-  <%= form.inputs do %>
-    <%= form.input :current_password, :required => true, :input_html => { :autofocus => true, :autocomplete => :off } %>
-  <% end %>
-  <%= form.inputs :class => 'inputs inline_fieldset' do %>
-    <%= form.input :last_name, :required => resource.regular? %>
-    <%= form.input :first_name, :required => resource.regular? %>
-    <%= form.input :middle_name %>
-  <% end %>
-  <%= form.inputs do %>
-    <%= form.input :email, :required => true, :input_html => { :disabled => :disabled } %>
-  <% end %>
-  <%= form.inputs :class => 'inputs inline_fieldset' do %>
-    <%= form.input :password %>
-    <%= form.input :password_confirmation %>
-  <% end %>
-  <%= form.buttons do %>
-    <%= form.commit_button :label => 'Сохранить', :button_html => { :class => 'button' } %>
-    <li><%= link_to 'Отмена', root_path %></li>
-    <li class='float_right'>
-      <%= link_to 'Удалить учётную запись', registration_path(resource_name),
-                  :confirm => 'Вы точно уверены, что хотите удалить учётную запись?',
-                  :method => :delete,
-                  :class => 'button danger' %>
-    </li>
-  <% end %>
+
+  <%= form.input :current_password, :required => true, :input_html => { :autofocus => true, :autocomplete => :off } %>
+  <%= form.input :last_name, :required => resource.regular? %>
+  <%= form.input :first_name, :required => resource.regular? %>
+  <%= form.input :middle_name %>
+  <%= form.input :email, :required => true, :input_html => { :disabled => :disabled } %>
+  <%= form.input :password, :label => 'Новый пароль' %>
+  <%= form.input :password_confirmation, :label => 'Подтверждение нового пароля' %>
+  <%= form.submit 'Сохранить', :class => 'button' %>
+  <%= link_to 'Отмена', root_path %>
+  <div class='float_right'>
+    <%= link_to 'Удалить учётную запись', registration_path(resource_name),
+      :confirm => 'Вы точно уверены, что хотите удалить учётную запись?',
+      :method => :delete,
+      :class => 'button danger' %>
+  </div>
 <% end %>

@@ -1,14 +1,11 @@
 <h1>Изменение пароля</h1>
 
-<%= semantic_form_for resource, :as => resource_name, :url => password_path(resource_name), :html => { :method => :put } do | form | %>
+<%= simple_form_for resource, :as => resource_name, :url => password_path(resource_name), :html => { :method => :put } do | form | %>
   <%= devise_error_messages! %>
-  <%= form.inputs do %>
-    <%= form.input :reset_password_token, :as => :hidden %>
-    <%= form.input :password, :label => 'Новый пароль', :input_html => { :autofocus => true } %>
-    <%= form.input :password_confirmation %>
-  <% end %>
-  <%= form.buttons do %>
-    <%= form.commit_button :label => 'Изменить', :button_html => { :class => 'button' } %>
-    <%= render :partial => "shared/links" %>
-  <% end %>
+
+  <%= form.input :reset_password_token, :as => :hidden %>
+  <%= form.input :password, :label => 'Новый пароль', :input_html => { :autofocus => true } %>
+  <%= form.input :password_confirmation %>
+  <%= form.submit 'Изменить', :class => 'button' %>
+  <%= render :partial => 'shared/links' %>
 <% end %>

@@ -1,4 +1,4 @@
-source 'http://rubygems.org'
+source 'https://rubygems.org'
 
 group :assets do
   gem 'compass-rails'
@@ -16,21 +16,21 @@ group :default do
   gem 'devise'
   gem 'devise-async'
   gem 'devise-russian'
-  gem 'formtastic',         '~> 2.1.0'
   gem 'inherited_resources'
   gem 'jquery-rails'
   gem 'omniauth'
   gem 'openteam-commons'
   gem 'postmark-rails', '~> 0.5.2'
-  gem 'progress_bar',                               :require => false
-  gem 'rails',                                      :require => false
+  gem 'progress_bar', :require => false
+  gem 'rails'
   gem 'russian'
+  gem 'simple_form'
   gem 'validates_email_format_of'
 end
 
 group :development do
-  gem 'annotate'
-  gem 'brakeman'
+  gem 'annotate', :require => false
+  gem 'brakeman', :require => false
   gem 'capistrano-db-tasks', :git => 'git://github.com/sgruhier/capistrano-db-tasks'
   gem 'capistrano-unicorn'
   gem 'openteam-capistrano'
@@ -38,11 +38,11 @@ end
 
 group :production do
   gem 'daemons'
-  gem 'pg',                                         :require => false
+  gem 'pg', :require => false
 end
 
 group :test do
   gem 'rspec-rails'
   gem 'shoulda-matchers'
-  gem 'sqlite3',                                    :require => false
+  gem 'sqlite3', :require => false
 end
