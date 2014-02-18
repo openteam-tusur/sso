@@ -1,0 +1,127 @@
+@import 'bootstrap/variables'
+@import 'bootstrap/mixins'
+@import 'bootstrap/forms'
+
+.simple_form
+
+  #error_explanation
+    color: #fff
+    background-color: #880000
+    padding: 10px
+    margin-bottom: 10px
+
+  div.input
+    margin-bottom: 10px
+
+    label
+      font-weight: normal
+      cursor: pointer
+      margin-bottom: 5px
+
+      abbr
+        color: #fc0000
+        cursor: help
+
+    input
+      @extend .form-control
+      font-size: 12px
+      font-family: 'Verdana', 'Tahoma', sans-serif
+      width: 284px
+      height: auto
+
+    &.boolean
+      @extend .checkbox
+
+      label
+        padding-left: 0
+
+      input
+        width: auto
+
+        &:focus
+          +box-shadow(none)
+
+    &.user_reset_password_token
+      .error
+        display: none
+
+  .line
+    +clearfix
+    > div
+      float: left
+      margin-right: 20px
+
+      &.without_margin
+        margin-right: 0
+
+      input
+        width: 204px
+
+  div.field_with_errors
+
+    span.error
+      font-size: 11px
+      color: #fc0000
+      display: block
+
+  div.actions
+    +clearfix
+
+    .float_right
+      float: right
+
+    a,
+    ul,
+    li,
+    input
+      +inline-block
+
+    a,
+    input
+      outline: none
+      font-size: 12px
+      font-family: 'Verdana', 'Tahoma', sans-serif
+      padding: 0
+      margin: 0 10px 0 0
+
+    .button
+      color: #fff
+      cursor: pointer
+      border: 1px solid #005bae
+      +border-radius(5px)
+      background-color: #0072c2
+      +background(linear-gradient(top, #0089d7, #005caf))
+      margin-top: 0
+      margin-bottom: 1px
+      padding: 10px
+
+      &:hover
+        +text-shadow(0 0 1px rgba(#fff, .75))
+        text-decoration: none
+
+      &:active
+        +background(linear-gradient(top, #005caf, #0089d7))
+        margin-top: 1px
+        margin-bottom: 0
+
+      &.white
+        color: #000
+        border-color: #d0d4d3
+        background-color: #f9f9f9
+        +background(linear-gradient(top, #fefefe, #d2d6d5))
+
+        &:hover
+          +text-shadow(0 0 1px rgba(#ccc, .75))
+
+        &:active
+          +background(linear-gradient(top, #d2d6d5, #fefefe))
+
+      &.danger
+        color: #df0000
+
+        &:hover
+          +text-shadow(0 0 1px rgba(#df0000, .75))
+
+    a.button
+      padding-top: 8px
+      padding-bottom: 8px

@@ -1,8 +1,8 @@
 source 'https://rubygems.org'
 
 group :assets do
+  gem 'bootstrap-sass', '~> 3.1.1'
   gem 'compass-rails'
-  gem 'execjs'
   gem 'sass-rails'
   gem 'turbo-sprockets-rails3'
   gem 'uglifier'

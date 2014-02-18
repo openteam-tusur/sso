@@ -1,10 +1,15 @@
-<h1>Вход</h1>
+<%= content_for :title, 'Вход в систему' %>
+
+<h1>Вход в систему</h1>
 
 <%= simple_form_for resource, :as => resource_name, :url => session_path(resource_name) do | form | %>
-  <%= form.input :email, :input_html => { :autofocus => true } %>
-  <%= form.input :password %>
-  <%= form.input :remember_me, :as => :boolean if devise_mapping.rememberable? %>
-  <%= form.submit 'Войти', :class => 'button' %>
-  <%= render :partial => 'shared/links' %>
-<% end %>
+  <%= devise_error_messages! %>
 
+  <%= form.input :email, :required => true, :label => false, :placeholder => 'email', :input_html => { :autofocus => true } %>
+  <%= form.input :password, :required => true, :label => false, :placeholder => 'пароль' %>
+  <%= form.input :remember_me, :as => :boolean if devise_mapping.rememberable? %>
+  <div class='actions'>
+    <%= form.submit 'Войти', :class => 'button' %>
+    <%= render :partial => 'shared/links' %>
+  </div>
+<% end %>

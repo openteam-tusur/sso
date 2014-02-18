@@ -15,7 +15,7 @@ function hide_flash_block() {
 };
 
 $(function() {
-  $('#flash_block a').click(function() {
+  $('#flash_block').click(function() {
     hide_flash_block();
   });
   $("#flash_block").stop(true, true);

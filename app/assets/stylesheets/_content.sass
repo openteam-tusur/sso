@@ -1,0 +1,40 @@
+body
+
+  .content
+    background-color: #fff
+    +box-shadow(#aaa 0 0 10px)
+    +border-radius(5px)
+    margin: 100px auto 0
+    padding: 20px
+
+    h1
+      font-size: 22px
+      text-align: center
+      margin-bottom: 10px
+
+    p
+      margin-bottom: 10px
+
+    #flash_block
+      cursor: pointer
+      text-align: center
+      padding: 10px
+      margin-bottom: 10px
+
+      p
+        margin-bottom: 0
+
+      &.flash_notice
+        background-color: #dff0d8
+
+      &.flash_alert,
+      &.flash_error
+        background-color: #f2dede
+
+    &.sessions,
+    &.passwords,
+    &.auth
+      width: 310px
+
+    &.registrations
+      width: 730px

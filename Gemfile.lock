@@ -42,6 +42,8 @@ GEM
     arel (3.0.3)
     attribute_normalizer (1.1.0)
     bcrypt-ruby (3.0.1)
+    bootstrap-sass (3.1.1.0)
+      sass (~> 3.2)
     brakeman (1.9.4)
       erubis (~> 2.6)
       fastercsv (~> 1.5)
@@ -255,6 +257,7 @@ PLATFORMS
 DEPENDENCIES
   annotate
   attribute_normalizer
+  bootstrap-sass (~> 3.1.1)
   brakeman
   capistrano-db-tasks!
   capistrano-unicorn
@@ -266,7 +269,6 @@ DEPENDENCIES
   devise
   devise-async
   devise-russian
-  execjs
   inherited_resources
   jquery-rails
   omniauth

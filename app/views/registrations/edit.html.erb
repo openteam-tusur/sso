@@ -1,3 +1,5 @@
+<%= content_for :title, 'Редактирование профиля' %>
+
 <h1>Редактирование профиля</h1>
 
 <p class='information'>
@@ -7,19 +9,29 @@
 <%= simple_form_for resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put } do | form | %>
   <%= devise_error_messages! %>
 
-  <%= form.input :current_password, :required => true, :input_html => { :autofocus => true, :autocomplete => :off } %>
-  <%= form.input :last_name, :required => resource.regular? %>
-  <%= form.input :first_name, :required => resource.regular? %>
-  <%= form.input :middle_name %>
-  <%= form.input :email, :required => true, :input_html => { :disabled => :disabled } %>
-  <%= form.input :password, :label => 'Новый пароль' %>
-  <%= form.input :password_confirmation, :label => 'Подтверждение нового пароля' %>
-  <%= form.submit 'Сохранить', :class => 'button' %>
-  <%= link_to 'Отмена', root_path %>
-  <div class='float_right'>
-    <%= link_to 'Удалить учётную запись', registration_path(resource_name),
-      :confirm => 'Вы точно уверены, что хотите удалить учётную запись?',
-      :method => :delete,
-      :class => 'button danger' %>
+  <div class='line'>
+    <%= form.input :current_password, :required => true, :input_html => { :autofocus => true, :autocomplete => :off } %>
+  </div>
+  <div class='line'>
+    <%= form.input :last_name, :required => resource.regular? %>
+    <%= form.input :first_name, :required => resource.regular? %>
+    <%= form.input :middle_name, :wrapper_html => { :class => :without_margin } %>
+  </div>
+  <div class='line'>
+    <%= form.input :email, :required => true, :input_html => { :disabled => :disabled } %>
+  </div>
+  <div class='line'>
+    <%= form.input :password, :label => 'Новый пароль' %>
+    <%= form.input :password_confirmation, :label => 'Подтверждение нового пароля' %>
+  </div>
+  <div class='actions'>
+    <%= form.submit 'Сохранить', :class => 'button' %>
+    <%= link_to 'Отмена', root_path %>
+    <div class='float_right'>
+      <%= link_to 'Удалить учётную запись', registration_path(resource_name),
+        :confirm => 'Вы точно уверены, что хотите удалить учётную запись?',
+        :method => :delete,
+        :class => 'button white danger' %>
+    </div>
   </div>
 <% end %>

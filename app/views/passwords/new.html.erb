@@ -1,9 +1,15 @@
+<%= content_for :title, 'Сброс пароля' %>
+
 <h1>Забыли пароль?</h1>
 
-<%= simple_form_for resource, :as => resource_name, :url => password_path(resource_name), :html => { :method => :post } do |form| %>
-  <%= devise_error_messages! %>
+<p class='information'>
+  Введите адрес электронной почты, уаказанный при регистрации. На этот адрес будет выслана инструкция для сброса пароля.
+</p>
 
-  <%= form.input :email, :input_html => { :autofocus => true } %>
-  <%= form.submit 'Сбросить пароль', :class => 'button icon key' %>
-  <%= render :partial => 'shared/links' %>
+<%= simple_form_for resource, :as => resource_name, :url => password_path(resource_name), :html => { :method => :post } do |form| %>
+  <%= form.input :email, :required => true, :input_html => { :autofocus => true } %>
+  <div class='actions'>
+    <%= form.submit 'Сбросить пароль', :class => 'button primary' %>
+    <%= render :partial => 'shared/links' %>
+  </div>
 <% end %>

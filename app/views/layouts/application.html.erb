@@ -2,17 +2,16 @@
 <html lang='ru'>
   <head>
     <meta charset='UTF-8'>
-    <title>Вход в систему</title>
+    <title><%= [yield(:title), 'Система аутентификации'].delete_if(&:blank?).join(' — ') %></title>
     <%= stylesheet_link_tag    'application' %>
     <%= javascript_include_tag 'application' %>
     <%= csrf_meta_tags %>
   </head>
   <body>
-    <div class='content'>
+    <div class='content <%= controller.controller_name %>'>
       <% flash.each do |name, msg| %>
         <% next unless %w[notice alert error].include?(name.to_s) %>
         <div class='flash_<%= name %>' id='flash_block'>
-          <%= link_to 'закрыть', '#', :title => 'закрыть' %>
           <%= content_tag :p, msg %>
         </div>
       <% end %>
