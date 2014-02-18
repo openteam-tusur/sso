@@ -38,6 +38,7 @@ end
 
 group :production do
   gem 'daemons'
+  gem 'unicorn', '4.7.0'
   gem 'pg', :require => false
 end
 
