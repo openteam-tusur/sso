@@ -22,7 +22,7 @@ group :default do
   gem 'openteam-commons'
   gem 'postmark-rails', '~> 0.5.2'
   gem 'progress_bar', :require => false
-  gem 'rails'
+  gem 'rails', '~> 3.2.15'
   gem 'russian'
   gem 'simple_form'
   gem 'validates_email_format_of'

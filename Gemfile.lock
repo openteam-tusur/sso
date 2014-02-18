@@ -277,7 +277,7 @@ DEPENDENCIES
   pg
   postmark-rails (~> 0.5.2)
   progress_bar
-  rails
+  rails (~> 3.2.15)
   rspec-rails
   russian
   sass-rails
