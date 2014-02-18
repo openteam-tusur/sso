@@ -14,10 +14,27 @@ function hide_flash_block() {
   });
 };
 
+function init_auth() {
+  var draw_popup, save_comment;
+  draw_popup = function(url, width, height, name) {
+    var left, top;
+    left = (screen.width / 2) - (width / 2);
+    top = (screen.height / 2) - (height / 2);
+    return window.open(url, name, "menubar=no,toolbar=no,status=no,width=" + width + ",height=" + height + ",toolbar=no,left=" + left + ",top=" + top);
+  };
+  $('.social_auth_link').not('.charged').addClass('charged').on('click', function(evt) {
+    var target;
+    target = $(evt.target);
+    draw_popup(target.attr('href'), 700, 400, 'Авторизация');
+    return false;
+  });
+};
+
 $(function() {
   $('#flash_block').click(function() {
     hide_flash_block();
   });
   $("#flash_block").stop(true, true);
   setTimeout("hide_flash_block();", 20000);
+  init_auth();
 });

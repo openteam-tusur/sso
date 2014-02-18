@@ -1,15 +1,19 @@
 app:
-  url:          http://sso.openteam.ru
-  secret:       SECRET
+  url:              'http://sso.openteam.ru'
+  secret:           'SECRET'
 
 mailer:
-  sender_email: email
-  delivery_method: 'postmark' || 'smtp'
+  sender_email:     'email'
+  delivery_method:  'postmark' || 'smtp'
   smtp:
-    address:    localhost
+    address:        'localhost'
   postmark:
-    api_key:    key
+    api_key:        'KEY'
 
 errors:
-  key:          KEY
-  url:          http://errors.openteam.ru
+  url:              'http://errors.openteam.ru'
+  key:              'KEY'
+
+twitter:
+  app_key:          'KEY'
+  app_secret:       'SECRET'
