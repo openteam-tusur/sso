@@ -1,4 +1,15 @@
 GIT
+  remote: git://github.com/openteam-tusur/tusur_header
+  revision: 637e67bd89548f929d92af78711ba52fa73ad628
+  specs:
+    tusur_header (0.0.1)
+      bootstrap-sass (~> 3.1.1)
+      coffee-rails (~> 3.2.2)
+      compass-rails (~> 1.1.3)
+      jquery-rails (~> 2.1.4)
+      sass-rails (~> 3.2.6)
+
+GIT
   remote: git://github.com/sgruhier/capistrano-db-tasks
   revision: 396cbbfe0aa4bfe48c8edf2718f2af6163af42bf
   ref: 396cbbf
@@ -70,6 +81,13 @@ GEM
       capistrano
     chronic (0.8.0)
     chunky_png (1.3.0)
+    coffee-rails (3.2.2)
+      coffee-script (>= 2.2.0)
+      railties (~> 3.2.0)
+    coffee-script (2.2.0)
+      coffee-script-source
+      execjs
+    coffee-script-source (1.7.0)
     compass (0.12.2)
       chunky_png (~> 1.2)
       fssm (>= 0.2.7)
@@ -97,8 +115,7 @@ GEM
       devise
     diff-lcs (1.1.3)
     erubis (2.7.0)
-    execjs (1.4.0)
-      multi_json (~> 1.0)
+    execjs (2.0.2)
     fastercsv (1.5.5)
     fssm (0.2.10)
     haml (4.0.5)
@@ -207,7 +224,7 @@ GEM
     rvm-capistrano (1.5.1)
       capistrano (~> 2.15.4)
     sass (3.2.14)
-    sass-rails (3.2.5)
+    sass-rails (3.2.6)
       railties (~> 3.2.0)
       sass (>= 3.1.10)
       tilt (~> 1.3)
@@ -285,6 +302,7 @@ DEPENDENCIES
   simple_form
   sqlite3
   turbo-sprockets-rails3
+  tusur_header!
   uglifier
   unicorn (= 4.7.0)
   validates_email_format_of

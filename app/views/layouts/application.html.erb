@@ -8,6 +8,7 @@
     <%= csrf_meta_tags %>
   </head>
   <body>
+    <%= render :partial => 'tusur_header' %>
     <div class='content <%= controller.controller_name %>'>
       <% flash.each do |name, msg| %>
         <% next unless %w[notice alert error].include?(name.to_s) %>
