@@ -1,6 +1,6 @@
 GIT
   remote: git://github.com/openteam-tusur/tusur_header
-  revision: cacfedc424625cb7bdf49d388b902e64bef02c42
+  revision: caadc7007ccd963c2eb339c2512131b159d47c97
   specs:
     tusur_header (0.0.1)
       bootstrap-sass (~> 3.1.1)
