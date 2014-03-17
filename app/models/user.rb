@@ -76,10 +76,6 @@ class User < ActiveRecord::Base
   def authenticatable_salt
     nil
   end
-
-  def remember_token
-    encrypted_password[0,29] if encrypted_password
-  end
 end
 # == Schema Information
 #
