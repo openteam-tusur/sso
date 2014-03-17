@@ -1,20 +1,16 @@
 Sso::Application.routes.draw do
   devise_for :users, :controllers => { :registrations => 'registrations',
-                                       :sessions => 'sessions',
-                                       :passwords => 'passwords' }
+                                       :sessions      => 'sessions',
+                                       :passwords     => 'passwords' }
 
   # omniauth client stuff
-  match '/auth/:provider/callback', :to => 'authentications#create'
-  match '/auth/failure', :to => 'authentications#failure'
+  #get '/auth/:provider/callback', :to => 'authentications#create'
+  #get '/auth/failure',            :to => 'authentications#failure'
 
   # Provider stuff
-  match '/oauth/user' => 'auth#user'
-  match '/oauth/token' => 'auth#access_token'
-  match '/oauth/authorize' => 'auth#authorize'
-
-  # Account linking
-  match 'authentications/:user_id/link' => 'authentications#link', :as => :link_accounts
-  match 'authentications/:user_id/add' => 'authentications#add', :as => :add_account
+  get  '/oauth/user'      => 'auth#user'
+  post '/oauth/token'     => 'auth#access_token'
+  get  '/oauth/authorize' => 'auth#authorize'
 
   root :to => 'auth#welcome'
 end

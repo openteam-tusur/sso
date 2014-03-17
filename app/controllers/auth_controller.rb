@@ -1,8 +1,9 @@
 # encoding: utf-8
 
 class AuthController < ApplicationController
-  before_filter :authenticate_user!, :except => [:access_token]
-  skip_before_filter :verify_authenticity_token, :only => [:access_token]
+  before_filter :authenticate_user_by_token!,    :only   => [:user]
+  before_filter :authenticate_user!,             :except => [:access_token, :user]
+  skip_before_filter :verify_authenticity_token, :only   => [:access_token]
 
   def welcome
     unless current_user.valid?
@@ -67,6 +68,14 @@ class AuthController < ApplicationController
     respond_to do |format|
       format.any { render :json => response.to_json }
     end
+  end
+
+  private
+
+  def authenticate_user_by_token!
+    access_token = params[:oauth_token].presence
+    user         = access_token && User.find_by_access_token(access_token)
+    sign_in user, :store => false if user
   end
 
   protected

@@ -6,17 +6,15 @@ class User < ActiveRecord::Base
 
   before_validation :initialize_fields, :on => :create
 
-  devise :database_authenticatable, :registerable, :token_authenticatable,
+  devise :database_authenticatable, :registerable,
          :recoverable, :timeoutable, :trackable, :validatable, :rememberable, :async
-
-  self.token_authentication_key = "oauth_token"
 
   attr_accessible :email, :password, :password_confirmation, :remember_me, :last_name, :first_name, :middle_name
 
   VALIDATORS = {
-    :should_contains_only_cyrillic_chars => /^[а-яё -]+$/i,
-    :should_starts_with_capital_letter => /^[А-ЯЁ]/,
-    :should_looks_like_name => /^([А-ЯЁ][а-яё]*)([ -][А-ЯЁ]?[а-яё]+)*$/
+    :should_contains_only_cyrillic_chars => /\A[а-яё -]+\z/i,
+    :should_starts_with_capital_letter => /\A[А-ЯЁ]/,
+    :should_looks_like_name => /\AA([А-ЯЁ][а-яё]*)([ -][А-ЯЁ]?[а-яё]+)*\z/
   }
 
 
@@ -48,10 +46,6 @@ class User < ActiveRecord::Base
     authentications.build(:provider => omniauth['provider'], :uid => omniauth['uid'])
   end
 
-  def self.find_for_token_authentication(conditions)
-    where(["access_grants.access_token = ? AND (access_grants.access_token_expires_at IS NULL OR access_grants.access_token_expires_at > ?)", conditions[token_authentication_key], Time.now]).joins(:access_grants).select("users.*").first
-  end
-
   def initialize_fields
     self.status = "Active"
     self.expiration_date = 1.year.from_now
@@ -59,6 +53,13 @@ class User < ActiveRecord::Base
 
   def regular?
     !admin?
+  end
+
+  def self.find_by_access_token(access_token)
+    where(["access_grants.access_token = ? AND (access_grants.access_token_expires_at IS NULL OR access_grants.access_token_expires_at > ?)", access_token, Time.now])
+      .joins(:access_grants)
+      .select("users.*")
+      .first
   end
 
   alias :to_s :name

@@ -1,5 +1,9 @@
 app:
+  domain:           '.domain'                 #delete the line in development
   url:              'http://sso.openteam.ru'
+  secret:           'SECRET'
+
+devise:
   secret:           'SECRET'
 
 mailer:
@@ -13,6 +17,9 @@ mailer:
 errors:
   url:              'http://errors.openteam.ru'
   key:              'KEY'
+
+session_store:
+  url:              'redis://host:6379/0/sessions'
 
 twitter:
   app_key:          'KEY'
