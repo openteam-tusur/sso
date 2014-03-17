@@ -23,6 +23,7 @@ group :default do
   gem 'sass-rails',               '~> 4.0.0'
   gem 'sidekiq'
   gem 'simple_form'
+  gem 'sinatra',                                    :require => false
   gem 'tusur_header',                               :git => 'git://github.com/openteam-tusur/tusur_header'
   gem 'uglifier',                 '>= 1.3.0'
   gem 'validates_email_format_of'

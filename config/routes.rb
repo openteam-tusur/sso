@@ -1,4 +1,8 @@
+require 'sidekiq/web'
+
 Sso::Application.routes.draw do
+  mount Sidekiq::Web, at: '/sidekiq'
+
   devise_for :users, :controllers => { :registrations => 'registrations',
                                        :sessions      => 'sessions',
                                        :passwords     => 'passwords' }
