@@ -14,7 +14,7 @@ class User < ActiveRecord::Base
   VALIDATORS = {
     :should_contains_only_cyrillic_chars => /\A[а-яё -]+\z/i,
     :should_starts_with_capital_letter => /\A[А-ЯЁ]/,
-    :should_looks_like_name => /\AA([А-ЯЁ][а-яё]*)([ -][А-ЯЁ]?[а-яё]+)*\z/
+    :should_looks_like_name => /\A([А-ЯЁ][а-яё]*)([ -][А-ЯЁ]?[а-яё]+)*\z/
   }
 
 
