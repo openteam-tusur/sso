@@ -69,7 +69,7 @@ class User < ActiveRecord::Base
   end
 
   def self.serialize_from_session(key, salt)
-    record = find_by(:id => key.first.to_i)
+    record = find_by(:id => key.map(&:to_i))
     record if record && record.authenticatable_salt == salt
   end
 end
