@@ -6,6 +6,9 @@ app:
 devise:
   secret:           'SECRET'
 
+redis:
+  url:              'redis://localhost:6379/3'
+
 mailer:
   sender_email:     'email'
   delivery_method:  'postmark' || 'smtp'
