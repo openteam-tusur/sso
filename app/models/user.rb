@@ -1,6 +1,11 @@
 # encoding: utf-8
 
 class User < ActiveRecord::Base
+  include Gravtastic
+  gravtastic
+
+  has_remote_profile
+
   has_many :authentications, :dependent => :delete_all
   has_many :access_grants, :dependent => :delete_all
 

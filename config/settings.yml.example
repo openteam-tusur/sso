@@ -27,3 +27,6 @@ session_store:
 twitter:
   app_key:          'KEY'
   app_secret:       'SECRET'
+
+profile:
+  url:              'http://profile.url'

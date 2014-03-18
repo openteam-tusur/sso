@@ -10,6 +10,7 @@ group :default do
   gem 'devise',                   '~> 3.2.3'
   gem 'devise-async'
   gem 'devise-russian'
+  gem 'gravtastic'
   gem 'inherited_resources',      '~> 1.4.1'
   gem 'jquery-rails',             '~> 3.1.0'
   gem 'omniauth',                 '~> 1.2.1'
