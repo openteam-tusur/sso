@@ -6,6 +6,9 @@ Sso::Application.routes.draw do
   devise_for :users, :controllers => { :registrations => 'registrations',
                                        :sessions      => 'sessions',
                                        :passwords     => 'passwords' }
+  devise_scope :user do
+    get '/sign_out' => 'sessions#destroy', :as => :sign_out
+  end
 
   # omniauth client stuff
   #get '/auth/:provider/callback', :to => 'authentications#create'
