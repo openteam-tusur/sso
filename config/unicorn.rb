@@ -8,7 +8,7 @@ app_dir = File.expand_path('../../', __FILE__)
 # Set unicorn options
 worker_processes 2
 preload_app true
-timeout 180
+timeout 360
 
 # Fill path to your app
 working_directory app_dir
@@ -38,4 +38,8 @@ end
 
 after_fork do |server, worker|
   defined?(ActiveRecord::Base) and ActiveRecord::Base.establish_connection
+end
+
+before_exec do |server|
+  ENV['BUNDLE_GEMFILE'] = "#{app_dir}/Gemfile"
 end
