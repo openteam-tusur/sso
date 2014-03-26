@@ -34,7 +34,7 @@ group :development do
   gem 'annotate',                                   :require => false
   gem 'brakeman',                                   :require => false
   gem 'hirb'
-  gem 'openteam-capistrano',      '~> 1.0.1'
+  gem 'openteam-capistrano',      '~> 1.0.2'
 end
 
 group :production do

@@ -78,6 +78,9 @@ GEM
     capistrano-rvm (0.1.1)
       capistrano (~> 3.0)
       sshkit (~> 1.2)
+    capistrano-sidekiq (0.1.2)
+      capistrano
+      sidekiq
     capistrano3-unicorn (0.1.1)
       capistrano (>= 3.1.0)
     celluloid (0.15.1)
@@ -144,19 +147,20 @@ GEM
       treetop (~> 1.4.8)
     mime-types (1.25.1)
     minitest (4.7.5)
-    multi_json (1.9.0)
+    multi_json (1.9.2)
     net-scp (1.1.2)
       net-ssh (>= 2.6.5)
     net-ssh (2.8.0)
     omniauth (1.2.1)
       hashie (>= 1.2, < 3)
       rack (~> 1.0)
-    openteam-capistrano (1.0.1)
+    openteam-capistrano (1.0.2)
       airbrake (~> 3.1.16)
       capistrano (~> 3.1)
       capistrano-db-tasks (~> 0.3)
       capistrano-rails (~> 1.1)
       capistrano-rvm
+      capistrano-sidekiq
       capistrano3-unicorn
     openteam-commons (0.2.3)
       airbrake
@@ -198,7 +202,7 @@ GEM
       rake (>= 0.8.7)
       thor (>= 0.18.1, < 2.0)
     raindrops (0.13.0)
-    rake (10.1.1)
+    rake (10.2.1)
     redis (3.0.7)
     redis-actionpack (4.0.0)
       actionpack (~> 4)
@@ -329,7 +333,7 @@ DEPENDENCIES
   inherited_resources (~> 1.4.1)
   jquery-rails (~> 3.1.0)
   omniauth (~> 1.2.1)
-  openteam-capistrano (~> 1.0.1)
+  openteam-capistrano (~> 1.0.2)
   openteam-commons
   pg
   postmark-rails (~> 0.5.2)
