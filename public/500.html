@@ -1,15 +1,94 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html lang="ru">
-<head>
-  <meta charset="UTF-8">
-  <title>Внутренняя ошибка сервера (500 ошибка) | ESP Single sign-on</title>
-  <link href="/assets/application.css" media="screen" rel="stylesheet" type="text/css" />
-</head>
-<body>
-  <div class="content error">
-    <h1>Внутренняя ошибка сервера (500 ошибка)</h1>
-    <p>На сервере возникла внутренняя ошибка. Но не стоит беспокоиться, разработчики уже получили сообщение об этом.</p>
-    <p>Если проблема возникает продолжительное время, сообщите пожалуйста об этом нам на <a href="mailto:mail@openteam.ru">адрес электронной почты</a>.</p>
-  </div>
-</body>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Внутренняя ошибка сервера — Система аутентификации</title>
+    <link href="/error.css?body=1" media="all" rel="stylesheet" type="text/css" />
+    <script src="/error.js"></script>
+  </head>
+
+  <body class="error-page" role="document">
+    <div class="tusur_header_wrapper">
+      <div class="navbar navbar-inverse navbar-fixed-top navbar-desktop" role="navigation" id="menu_first">
+        <div class="container">
+          <div class="navbar-header">
+            <a class="navbar-brand" href="/"></a>
+          </div>
+          <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Сайты ТУСУР<b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                  <li><a href="http://www.tusur.ru/">Официальный информационный портал университета</a></li>
+                  <li><a href="http://09.tusur.ru/">Телефонный справочник</a></li>
+                  <li><a href="http://abiturient.tusur.ru/">Абитуриентам</a></li>
+                  <li><a href="http://edu.tusur.ru/">Научно-образовательный портал</a></li>
+                  <li><a href="http://timetable.tusur.ru/">Электронное расписание</a></li>
+                  <li><a href="http://attendance.tusur.ru/">Журнал посещаемости</a></li>
+                  <li><a href="http://re.tusur.ru/">Газета «Радиоэлектроник»</a></li>
+                </ul>
+              </li>
+            </ul>
+
+          </div>
+        </div>
+      </div>
+
+      <div class="navbar navbar-inverse navbar-fixed-top navbar-mobile" role="navigation" id="menu_mobile">
+        <div class="container">
+
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle mobile-toggler" data-toggle="collapse" data-target="#site-menu">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/"></a>
+          </div>
+
+          <div class="navbar-collapse collapse" id="site-menu">
+            <div class="mobile_menu">
+              <ul class="nav nav-pills first-menu-part col-xs-12 col-sm-4 col-lg-9 col-md-8 hidden-xs">
+                <li><a href="/">Вход в систему</a></li>
+                <li><a href="/users/sign_up">Регистрация</a></li>
+                <li><a href="/users/password/new">Восстановить пароль</a></li>
+              </ul>
+              <ul class="nav nav-pills first-menu-part col-xs-12 col-sm-4 col-lg-9 col-md-8 hidden-sm hidden-md hidden-lg">
+                <li class="col-xs-12"><a href="/">Вход в систему</a></li>
+                <li class="col-xs-12"><a href="/users/sign_up">Регистрация</a></li>
+                <li class="col-xs-12"><a href="/users/password/new">Восстановить пароль</a></li>
+              </ul>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+
+    <div class="container" role="main">
+      <div class="error">
+        <div class="error-image error-500"></div>
+
+        <div class="error-text">
+          <p>
+            На сервере произошла внутренняя ошибка и сервер не смог обработать Ваш запрос
+          </p>
+
+          <p>
+            Не стоит беспокоиться &ndash; служба поддержки уже получила сообщение об ошибке и в ближайшее время устранит причину.
+          </p>
+
+          <p>
+            <a href="/">На главную страницу</a>
+          </p>
+        </div>
+
+      </div>
+    </div>
+
+  </body>
 </html>
