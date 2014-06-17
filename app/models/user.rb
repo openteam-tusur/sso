@@ -81,6 +81,13 @@ class User < ActiveRecord::Base
   def authenticatable_salt
     nil
   end
+
+  def after_database_authentication
+    redis = Redis.new(:url => Settings['messaging.url'])
+    index = redis.incr('profile:sso_signin:index')
+
+    redis.set "profile:sso_signin:#{index}", { :uid => self.id.to_s }.to_json
+  end
 end
 # == Schema Information
 #
