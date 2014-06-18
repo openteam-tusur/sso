@@ -86,8 +86,8 @@ class User < ActiveRecord::Base
     redis = Redis.new(:url => Settings['messaging.url'])
 
     %w(profile timetable).each do |namespace|
-      index = redis.incr("#{namespace}:sso_signin:index")
-      redis.set "#{namespace}:sso_signin:#{index}", { :uid => self.id.to_s, :email => self.email }.to_json
+      index = redis.incr("#{namespace}:sso:signin:index")
+      redis.set "#{namespace}:sso:signin:#{index}", { :uid => self.id.to_s, :email => self.email }.to_json
     end
 
   end
