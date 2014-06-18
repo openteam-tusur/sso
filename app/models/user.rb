@@ -84,9 +84,12 @@ class User < ActiveRecord::Base
 
   def after_database_authentication
     redis = Redis.new(:url => Settings['messaging.url'])
-    index = redis.incr('profile:sso_signin:index')
 
-    redis.set "profile:sso_signin:#{index}", { :uid => self.id.to_s }.to_json
+    %w(profile timetable).each do |namespace|
+      index = redis.incr("#{namespace}:sso_signin:index")
+      redis.set "#{namespace}:sso_signin:#{index}", { :uid => self.id.to_s, :email => self.email }.to_json
+    end
+
   end
 end
 # == Schema Information
