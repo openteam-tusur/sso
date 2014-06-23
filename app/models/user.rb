@@ -43,6 +43,8 @@ class User < ActiveRecord::Base
   normalize_attribute :email
   normalize_attribute :first_name, :last_name, :middle_name, :with => [:squish, :blank]
 
+  after_create :share_user
+
   def name
     [first_name, middle_name, last_name].keep_if(&:present?).join(' ')
   end
@@ -82,7 +84,7 @@ class User < ActiveRecord::Base
     nil
   end
 
-  def after_database_authentication
+  def share_user
     redis = Redis.new(:url => Settings['messaging.url'])
 
     %w(profile timetable).each do |namespace|
