@@ -87,7 +87,7 @@ class User < ActiveRecord::Base
 
     %w(profile timetable).each do |namespace|
       index = redis.incr("#{namespace}:sso:signin:index")
-      redis.set "#{namespace}:sso:signin:#{index}", { :uid => self.id.to_s, :email => self.email }.to_json
+      redis.set "#{namespace}:sso:signin:#{index}", { :uid => self.id.to_s, :email => self.email, :name => self.name }.to_json
     end
 
   end
