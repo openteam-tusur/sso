@@ -9,7 +9,6 @@ group :default do
   gem 'default_value_for'
   gem 'devise',                   '~> 3.2.3'
   gem 'devise-async'
-  gem 'devise-russian'
   gem 'gravtastic'
   gem 'inherited_resources',      '~> 1.4.1'
   gem 'jquery-rails',             '~> 3.1.0'
