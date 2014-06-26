@@ -87,7 +87,7 @@ class User < ActiveRecord::Base
   def share_user
     redis = Redis.new(:url => Settings['messaging.url'])
 
-    %w(profile timetable).each do |namespace|
+    %w(profile timetable directory abiturient).each do |namespace|
       index = redis.incr("#{namespace}:sso:signin:index")
       redis.set "#{namespace}:sso:signin:#{index}", { :uid => self.id.to_s, :email => self.email, :name => self.name }.to_json
     end
