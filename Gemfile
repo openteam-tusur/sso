@@ -14,7 +14,7 @@ group :default do
   gem 'jquery-rails',             '~> 3.1.0'
   gem 'omniauth',                 '~> 1.2.1'
   gem 'openteam-commons'
-  gem 'postmark-rails',           '~> 0.5.2'
+  gem 'postmark-rails',           '~> 0.8.0'
   gem 'progress_bar',                               :require => false
   gem 'protected_attributes'
   gem 'rails',                    '~> 4.0.3'
