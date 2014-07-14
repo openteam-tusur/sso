@@ -19,5 +19,6 @@
       <% end %>
       <%= yield %>
     </div>
+    <%= yield :stop_ie if content_for?(:stop_ie) %>
   </body>
 </html>
