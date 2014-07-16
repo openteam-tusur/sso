@@ -1,6 +1,6 @@
 GIT
   remote: git://github.com/openteam-tusur/tusur_header
-  revision: d394b9a6e0d405cb1aa4865a2e670df1c9fe21cd
+  revision: dd8fecf0136939a4b6fd0f092bbc70b1a1ee48b9
   specs:
     tusur_header (0.0.1)
       bootstrap-sass (~> 3.1.1)
@@ -9,7 +9,7 @@ GIT
       jquery-rails
       rest-client
       sass-rails (>= 3.2)
-      stop_ie (>= 0.1.4)
+      stop_ie (>= 0.1.5)
 
 GEM
   remote: https://rubygems.org/
@@ -223,7 +223,7 @@ GEM
       redis (>= 2.2)
     responders (1.0.0)
       railties (>= 3.2, < 5)
-    rest-client (1.7.1)
+    rest-client (1.7.2)
       mime-types (>= 1.16, < 3.0)
       netrc (~> 0.7)
     rspec-core (2.14.8)
@@ -284,7 +284,7 @@ GEM
       colorize
       net-scp (>= 1.1.2)
       net-ssh (>= 2.8.0)
-    stop_ie (0.1.4)
+    stop_ie (0.1.5)
       jquery-rails
       sass-rails (>= 3.2)
     temple (0.6.7)
