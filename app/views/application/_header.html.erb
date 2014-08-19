@@ -13,10 +13,12 @@
           <b class='caret'></b>
         </div>
         <ul class="dropdown-menu">
-          <% current_user.get_menu.each do |k, v| %>
-            <li>
-              <%= link_to k, v %>
-            </li>
+          <% current_user.get_menu.each do |title, link| %>
+            <% if link.present? %>
+              <li><%= link_to title, link, :method => link.scan(/sign_out/).any? ? :delete : nil %></li>
+            <% else %>
+              <li class='divider'></li>
+            <% end %>
           <% end %>
         </ul>
       </li>
