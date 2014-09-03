@@ -12,6 +12,7 @@ group :default do
   gem 'gravtastic'
   gem 'inherited_resources',      '~> 1.4.1'
   gem 'jquery-rails',             '~> 3.1.0'
+  gem 'non-stupid-digest-assets'
   gem 'omniauth',                 '~> 1.2.1'
   gem 'openteam-commons'
   gem 'postmark-rails',           '~> 0.8.0'
