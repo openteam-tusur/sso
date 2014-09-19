@@ -7,6 +7,8 @@
 /config/settings.yml
 /config/sunspot.yml
 /config/users.yml
+/config/valid_users.json
+/config/invalid_users.json
 /db/*.sqlite3
 /log
 /solr/data
