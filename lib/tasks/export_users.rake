@@ -30,7 +30,7 @@ def valid_email?(email)
 end
 
 def user_hash(user)
-  {:old_uid => user.id, :name => user.first_name, :patronymic => user.middle_name, :surname => user.last_name, :email => user.email, :encrypted_password => user.encrypted_password, :current_sign_in_at => user.current_sign_in_at}
+  {:uid => user.id, :name => user.first_name, :patronymic => user.middle_name, :surname => user.last_name, :email => user.email, :encrypted_password => user.encrypted_password, :current_sign_in_at => user.current_sign_in_at}
 end
 
 def write_file(name, arr)
