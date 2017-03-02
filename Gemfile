@@ -35,6 +35,7 @@ group :development do
   gem 'brakeman',                                   :require => false
   gem 'hirb'
   gem 'openteam-capistrano',      '1.0.8'
+  gem 'rails-erd'
 end
 
 group :production do
