@@ -14,7 +14,7 @@ group :default do
   gem 'jquery-rails',             '~> 3.1.0'
   gem 'non-stupid-digest-assets'
   gem 'omniauth',                 '~> 1.2.1'
-  gem 'openteam-commons',         '~> 0.3.3'
+  gem 'openteam-commons'
   gem 'postmark-rails',           '~> 0.8.0'
   gem 'progress_bar',                               :require => false
   gem 'protected_attributes'
@@ -33,7 +33,6 @@ end
 group :development do
   gem 'annotate',                                   :require => false
   gem 'brakeman',                                   :require => false
-  gem 'capistrano-db-tasks', '0.4'
   gem 'hirb'
   gem 'openteam-capistrano',      '1.0.8'
   gem 'rails-erd'
